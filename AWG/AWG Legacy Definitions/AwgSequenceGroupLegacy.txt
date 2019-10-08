@@ -1,0 +1,1043 @@
+//! \todo (pwh): This step is untested
+        /// <summary>
+        /// Sets the target index for the GOTO command of the sequencer
+
+        /// Note: For this command to work, the SEQuence:ELEMent[n]:GOTO:STATe must be ON and the sequence element must exist.
+        /// Note that the first element of a sequence is taken to be 1 not 0.@n
+        /// SEQuence:ELEMent[n]:GOTO:INDex
+        /// </summary>
+        /// <param name="index">Target index</param>
+        /// <param name="element">Sequence element</param>
+        /// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\sequence\verbatim
+        [When(@"I set the goto target index to ((?<!\S)[-+]?\d+(?!\S)) for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4])")]
+			\endverbatim 
+		*/
+        //[When(@"I set the goto target index to ((?<!\S)[-+]?\d+(?!\S)) for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4])")]
+        //public void ISetTheGoToTargetIndexForSequenceElementTo(string index, string element, string awg_number)
+        //{
+        //    int awg_index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(awg_index);
+        //    string commandLine = "SEQuence:ELEMent" + element + ":GOTO:INDex " + index;
+        //    awg.AWGVisaSession.Write(commandLine);
+        //}
+
+        //! \todo (pwh): This step is untested
+        /// <summary>
+        /// Gets the target index for the GOTO command of the sequencer
+
+        /// SEQuence:ELEMent[n]:GOTO:INDex?
+        /// </summary>
+        /// <param name="element">Sequence element</param>
+        /// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\sequence\verbatim
+        [When(@"I get the goto target index for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4])")]
+			\endverbatim 
+		*/
+        //[When(@"I get the goto target index for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4])")]
+        //public void IGetTheGoToTargetIndexForSequenceElement(string element, string awg_number)
+        //{
+        //    int awg_index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(awg_index);
+
+        //    string[] myArray; // A local, 'scratch' array
+        //    string response;
+
+        //    string commandLine = "SEQuence:ELEMent" + element + ":GOTO:INDex?";
+        //    awg.AWGVisaSession.Query(commandLine, out response);
+
+        //    // See if the requested sequence element already has a dictionary entry
+        //    if (awg.sequence_element_dict.TryGetValue(element, out myArray))
+        //    {
+        //        // We need to overwrite only the cell we want to update and keep the rest. Here, the index value 
+        //        // resolves to 12 and the rest of the cells returned from the TryGetValue should remain untouched
+        //        myArray[(int)AWG.sequence_element_parameters.Seq_GoToIndexValue] = response;
+
+        //        // Then overwrite the entry at that element number with the modified array
+        //        awg.sequence_element_dict.Remove(element);
+        //        awg.sequence_element_dict.Add(element, myArray);
+        //        Console.Write("");
+        //    }
+        //    else
+        //    {
+        //        // Then the element does not yet exist, and we have to add it with the index value we retreived
+        //        myArray[(int)AWG.sequence_element_parameters.Seq_GoToIndexValue] = response;
+        //        awg.sequence_element_dict.Add(element, myArray);
+        //    }
+        //}
+
+        //! \todo (pwh): This step is untested
+        /// <summary>
+        /// Compares the the target index for the GOTO command of the sequencer against the expected value
+
+        /// Note: For this command to work, the SEQuence:ELEMent[n]:GOTO:STATe must be ON and the sequence element must exist.
+        /// Note that the first element of a sequence is taken to be 1 not 0. @n
+        /// SEQuence:ELEMent[n]:GOTO:INDex?
+        /// </summary>
+        /// <param name="element">Sequence element</param>
+        /// <param name="awg_number">Which %AWG machine number</param>
+        /// <param name="expected_value">Expected index value </param>
+		/*!
+			\sequence\verbatim
+        [Then(@"the goto target index for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4]) should be ((?<!\S)[-+]?\d+(?!\S))")]
+			\endverbatim 
+		*/
+        //[Then(@"the goto target index for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4]) should be ((?<!\S)[-+]?\d+(?!\S))")]
+        //public void TheGoToTargetIndexForSequenceElementShouldBe(string element, string awg_number, string expected_value)
+        //{
+        //    int awg_index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(awg_index);
+
+        //    string[] myArray; // A local, 'scratch' array
+
+        //    // See if the requested sequence element already has a dictionary entry            
+        //    if (awg.sequence_element_dict.TryGetValue(element, out myArray))
+        //    {
+        //        // If it does, then test the expected value against the Sequence GoTo Index value in the array cell
+        //        Assert.AreEqual(expected_value, myArray[(int)AWG.sequence_element_parameters.Seq_GoToIndexValue]);
+        //    }
+        //    else
+        //    {
+        //        // Otherwise, the test fails because the requested element was not defined, therefore cannot be the expected value
+        //        Assert.Fail("The requested sequence element was not found");
+        //    }
+        //}
+       
+        /// <summary>
+        /// Sets the the GOTO state of the sequencer. 
+
+        /// Note: For the SEQuence:ELEMent[n]:GOTO:INDex command to take effect, the GOTO state must be set to ON. @n
+        /// SEQuence:ELEMent[n]:GOTO:STATe?
+        /// </summary>
+        /// <param name="goto_state">State</param>
+        /// <param name="element">Sequence Element</param>
+        /// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\sequence\verbatim
+        [When(@"I set the goto state value to (.+) for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4])")]
+			\endverbatim 
+		*/
+        //[When(@"I set the goto state value to (.+) for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4])")]
+        //public void ISetTheSequenceElementGoToStateTo(string goto_state, string element, string awg_number)
+        //{
+        //    int awg_index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(awg_index);
+        //    string commandLine = "SEQuence:ELEMent" + element + ":GOTO:STAte " + goto_state;
+        //    awg.AWGVisaSession.Write(commandLine);
+        //}
+
+        /// <summary>
+        /// Gets the the GOTO state of the sequencer. 
+    
+        /// SEQuence:ELEMent[n]:GOTO:STATe?
+        /// </summary>
+        /// <param name="element">Sequence Element</param>
+        /// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\sequence\verbatim
+        [When(@"I get the goto state for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4])")]
+			\endverbatim 
+		*/
+        //[When(@"I get the goto state for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4])")]
+        //public void IGetTheSequenceElementGoToState(string element, string awg_number)
+        //{
+        //    int awg_index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(awg_index);
+
+        //    int dim = (int)AWG.sequence_element_parameters.Seq_MaxArraySize;
+        //    string[] myArray = new string[dim]; // A local, 'scratch' array, sized to the max parameter in the enum list
+
+        //    string response;
+
+        //    string commandLine = "SEQuence:ELEMent" + element + ":GOTO:STATe?";
+        //    awg.AWGVisaSession.Query(commandLine, out response);
+
+        //    // See if the requested sequence element already has a dictionary entry
+        //    if (awg.sequence_element_dict.ContainsKey(element))
+        //    {
+        //        awg.sequence_element_dict.TryGetValue(element, out myArray);
+
+        //        // We need to overwrite only the cell we want to update and keep the rest that already exists. 
+        //        myArray[(int)AWG.sequence_element_parameters.Seq_GoToState] = response;
+
+        //        // Then overwrite the entry at that element number with the modified array               
+        //        awg.sequence_element_dict.Add(element, myArray);
+        //    }
+            
+        //    else // Then we make a new key and value array
+        //    {
+        //        // Then we assign the value and store it to the correct slot in the array
+        //        myArray[(int)AWG.sequence_element_parameters.Seq_GoToState] = response;
+
+        //        // ...and then store the array to the dictionary at the key for the subsequence name
+        //        awg.sequence_element_dict.Add(element, myArray);
+        //    }
+        //}
+
+
+        /// <summary>
+        /// Compares the the GOTO state of the sequencer against the expected value. 
+      
+        /// SEQuence:ELEMent[n]:GOTO:STATe?
+        /// </summary>
+        /// <param name="element">Sequence Element</param>
+        /// <param name="awg_number">Which %AWG machine number</param>
+        /// <param name="expected_value">Expected state value</param>
+		/*!
+			\sequence\verbatim
+        [Then(@"the goto state value for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4]) should be (.+)")]
+			\endverbatim 
+		*/
+        //[Then(@"the goto state value for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4]) should be (.+)")]
+        //public void TheSequenceElementGoToStateShouldBe(string element, string awg_number, string expected_value)
+        //{
+        //    int awg_index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(awg_index);
+
+        //    int dim = (int)AWG.sequence_element_parameters.Seq_MaxArraySize;
+        //    string[] myArray = new string[dim]; // A local, 'scratch' array, sized to the max parameter in the enum list
+
+        //    // See if the requested sequence element already has a dictionary entry            
+        //    if (awg.sequence_element_dict.TryGetValue(element, out myArray))
+        //    {
+        //        // If it does, then test the expected value against the Sequence GoTo State value in the array cell
+        //        Assert.AreEqual(expected_value, myArray[(int)AWG.sequence_element_parameters.Seq_GoToState]);
+        //    }
+        //    else
+        //    {
+        //        // Otherwise, the test fails because the requested element was not defined, therefore cannot be the expected value
+        //        Assert.Fail("The requested sequence element was not found");
+        //    }
+        //}
+
+        //! \todo (pwh): This step is untested
+        /// <summary>
+        /// Sets the target index for the sequencer’s event jump operation. 
+        
+        /// Note that this will take effect only when SEQuence:ELEMent[n]:JTARget:TYPE 
+        /// is set to INDex. @n
+        /// SEQuence:ELEMent[n]:JTARget:INDex(?)
+        /// </summary>
+        /// <param name="element">Sequence element</param>
+        /// <param name="index">Target Index</param>
+        /// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\sequence\verbatim
+        [When(@"I set the event jump target index to ((?<!\S)[-+]?\d+(?!\S)) for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4])")]
+			\endverbatim 
+		*/
+        //[When(@"I set the event jump target index to ((?<!\S)[-+]?\d+(?!\S)) for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4])")]
+        //public void ISetTheEventJumpTargetIndexForSequenceElementTo(string element, string index, string awg_number)
+        //{
+        //    int awg_index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(awg_index);
+        //    string commandLine = "SEQuence:ELEMent" + element + ":JTARget:INDex " + index;
+        //    awg.AWGVisaSession.Write(commandLine);
+        //}
+
+        //! \todo (pwh): This step is untested
+        /// <summary>
+        /// Gets the target index for the sequencer’s event jump operation. 
+
+        /// SEQuence:ELEMent[n]:JTARget:INDex(?)
+        /// </summary>
+        /// <param name="element">Sequence element</param>
+        /// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\sequence\verbatim
+        [When(@"I get the event jump target index for sequence element (\d+) on AWG([1-4])")]
+			\endverbatim 
+		*/
+        //[When(@"I get the event jump target index for sequence element (\d+) on AWG([1-4])")]
+        //public void IGetTheEventJumpTargetIndexForSequenceElement(string element, string awg_number)
+        //{
+        //    int awg_index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(awg_index);
+
+        //    string[] myArray; // A local, 'scratch' array
+        //    string response;
+
+        //    string commandLine = "SEQuence:ELEMent" + element + ":JTARget:INDex?";
+        //    awg.AWGVisaSession.Query(commandLine, out response);
+
+        //    // See if the requested sequence element already has a dictionary entry
+        //    if (awg.sequence_element_dict.TryGetValue(element, out myArray))
+        //    {
+        //        // We need to overwrite only the cell we want to update and keep the rest. Here, the index value 
+        //        // resolves to 10 and the rest of the cells returned from the TryGetValue should remain untouched
+        //        myArray[(int)AWG.sequence_element_parameters.Seq_EventJumpTargetIndex] = response;
+
+        //        // Then overwrite the entry at that element number with the modified array
+        //        awg.sequence_element_dict.Remove(element);
+        //        awg.sequence_element_dict.Add(element, myArray);
+        //    }
+        //    else
+        //    {
+        //        // Then the element does not yet exist, and we have to add it with the index value we retreived
+        //        myArray[(int)AWG.sequence_element_parameters.Seq_EventJumpTargetIndex] = response;
+        //        awg.sequence_element_dict.Add(element, myArray);
+        //    }
+        //}
+
+        //! \todo (pwh): This step is untested
+        /// <summary>
+        /// Compares the target index for the sequencer’s event jump operation against the expected value 
+
+        /// SEQuence:ELEMent[n]:JTARget:INDex(?)
+        /// </summary>
+        /// <param name="element">Sequence element</param>
+        /// <param name="awg_number">Which %AWG machine number</param>
+        /// <param name="expected_value">Expected target index</param>
+		/*!
+			\sequence\verbatim
+        [Then(@"the event jump target index for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4]) should be ((?<!\S)[-+]?\d+(?!\S))")]
+			\endverbatim 
+		*/
+        //[Then(@"the event jump target index for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4]) should be ((?<!\S)[-+]?\d+(?!\S))")]
+        //public void TheEventJumpTargetIndexForSequenceElementShouldBe(string element, string awg_number, string expected_value)
+        //{
+        //    int awg_index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(awg_index);
+
+        //    string[] myArray; // A local, 'scratch' array
+
+        //    // See if the requested sequence element already has a dictionary entry            
+        //    if (awg.sequence_element_dict.TryGetValue(element, out myArray))
+        //    {
+        //        // If it does, then test the expected value against the Sequence Event Jump Target Index value in the array cell
+        //        Assert.AreEqual(expected_value, myArray[(int)AWG.sequence_element_parameters.Seq_EventJumpTargetIndex]);
+        //    }
+        //    else
+        //    {
+        //        // Otherwise, the test fails because the requested element was not defined, therefore cannot be the expected value
+        //        Assert.Fail("The requested sequence element was not found");
+        //    }
+        //}
+
+        //! \todo (pwh): This step is untested
+        //! \todo (pwh): Needs a high-order step for the (IND|NEXT|OFF) values
+        /// <summary>
+        /// Sets the event jump target type for the jump.
+        /// 
+        /// SEQuence:ELEMent[n]:JTARget:TYPE(?)
+        /// </summary>
+        /// <param name="element">Sequence element</param>
+        /// <param name="jump_target">Jump target type</param>
+        /// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\sequence\verbatim
+        [When(@"I set the jump target type for sequence element ((?<!\S)[-+]?\d+(?!\S)) to (.+) on AWG([1-4])")]
+			\endverbatim 
+		*/
+        //[When(@"I set the jump target type for sequence element ((?<!\S)[-+]?\d+(?!\S)) to (.+) on AWG([1-4])")]
+        //public void ISetTheJumpTargetTypeForSequenceElementTo(string element, string jump_target, string awg_number)
+        //{
+        //    int awg_index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(awg_index);
+        //    string commandLine = "SEQuence:ELEMent" + element + ":JTARget:TYPE " + jump_target;
+        //    awg.AWGVisaSession.Write(commandLine);
+        //}
+
+        //! \todo (pwh): This step is untested
+        /// <summary>
+        /// Gets the event jump target type for the jump.
+   
+        /// SEQuence:ELEMent[n]:JTARget:TYPE(?)
+        /// </summary>
+        /// <param name="element">Sequence element</param>
+        /// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\sequence\verbatim
+        [When(@"I get the jump target type for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4])")]
+			\endverbatim 
+		*/
+        //[When(@"I get the jump target type for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4])")]
+        //public void IGetTheJumpTargetTypeForSequenceElement(string element, string awg_number)
+        //{
+        //    int awg_index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(awg_index);
+
+        //    string[] myArray; // A local, 'scratch' array
+        //    string response;
+
+        //    string commandLine = "SEQuence:ELEMent" + element + ":JTARget:TYPe?";
+        //    awg.AWGVisaSession.Query(commandLine, out response);
+
+        //    // See if the requested sequence element already has a dictionary entry
+        //    if (awg.sequence_element_dict.TryGetValue(element, out myArray))
+        //    {
+        //        // We need to overwrite only the cell we want to update and keep the rest. Here, the index value 
+        //        // resolves to 8 and the rest of the cells returned from the TryGetValue should remain untouched
+        //        myArray[(int)AWG.sequence_element_parameters.Seq_EventJumpTargetType] = response;
+
+        //        // Then overwrite the entry at that element number with the modified array
+        //        awg.sequence_element_dict.Remove(element);
+        //        awg.sequence_element_dict.Add(element, myArray);
+        //    }
+        //    else
+        //    {
+        //        // Then the element does not yet exist, and we have to add it with the index value we retreived
+        //        myArray[(int)AWG.sequence_element_parameters.Seq_EventJumpTargetType] = response;
+        //        awg.sequence_element_dict.Add(element, myArray);
+        //    }
+        //}
+
+        //! \todo (pwh): This step is untested
+        /// <summary>
+        /// Compares the event jump target type for the jump against the expected value.
+     
+        /// SEQuence:ELEMent[n]:JTARget:TYPE(?)
+        /// </summary>
+        /// <param name="element">Sequence element</param>
+        /// <param name="awg_number">Which %AWG machine number</param>
+        /// <param name="expected_value">Expected jump target type </param>
+		/*!
+			\sequence\verbatim
+        [Then(@"the jump target type for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4]) should be (.+)")]
+			\endverbatim 
+		*/
+        //[Then(@"the jump target type for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4]) should be (.+)")]
+        //public void TheJumpTargetTypeForSequenceElementShouldBe(string element, string awg_number, string expected_value)
+        //{
+        //    int awg_index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(awg_index);
+
+        //    string[] myArray; // A local, 'scratch' array
+
+        //    // See if the requested sequence element already has a dictionary entry            
+        //    if (awg.sequence_element_dict.TryGetValue(element, out myArray))
+        //    {
+        //        // If it does, then test the expected value against the Sequence Event Jump Target Type value in the array cell
+        //        Assert.AreEqual(expected_value, myArray[(int)AWG.sequence_element_parameters.Seq_EventJumpTargetType]);
+        //    }
+        //    else
+        //    {
+        //        // Otherwise, the test fails because the requested element was not defined, therefore cannot be the expected value
+        //        Assert.Fail("The requested sequence element was not found");
+        //    }
+        //}
+
+        //! \todo (pwh): This step is untested
+        /// <summary>
+        /// Sets a sequence element's loop count.
+
+        /// Loop count setting for an element is ignored if SEQuence:ELEMent[n]:LOOP:INFinite is set to ON @n
+        /// SEQuence:ELEMent[n]:LOOP:COUNt(?)
+        /// </summary>
+        /// <param name="element">Sequence element</param>
+        /// <param name="value">Loop count value</param>
+        /// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\sequence\verbatim
+        [When(@"I set the loop count for sequence element ((?<!\S)[-+]?\d+(?!\S)) to ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4])")]
+			\endverbatim 
+		*/
+        //[When(@"I set the loop count for sequence element ((?<!\S)[-+]?\d+(?!\S)) to ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4])")]
+        //public void ISetTheLoopCountForSequenceElementTo(string element, string value, string awg_number)
+        //{
+        //    int awg_index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(awg_index);
+        //    string commandLine = "SEQuence:ELEMent" + element + ":LOOP:COUNt " + value;
+        //    awg.AWGVisaSession.Write(commandLine);
+        //}
+
+        //! \todo (pwh): This step is untested
+        /// <summary>
+        /// Gets a sequence element's loop count.
+
+        /// Loop count setting for an element is ignored if SEQuence:ELEMent[n]:LOOP:INFinite is set to ON @n
+        /// SEQuence:ELEMent[n]:LOOP:COUNt(?)
+        /// </summary>
+        /// <param name="element">Sequence element</param>
+        /// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\sequence\verbatim
+        [When(@"I get the loop count for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4])")]
+			\endverbatim 
+		*/
+        //[When(@"I get the loop count for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4])")]
+        //public void IGetTheLoopCountForSequenceElement(string element, string awg_number)
+        //{
+        //    int awg_index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(awg_index);
+
+        //    string[] myArray; // A local, 'scratch' array
+        //    string response;
+
+        //    string commandLine = "SEQuence:ELEMent" + element + ":LOOP:COUNt?";
+        //    awg.AWGVisaSession.Query(commandLine, out response);
+
+        //    // See if the requested sequence element already has a dictionary entry
+        //    if (awg.sequence_element_dict.TryGetValue(element, out myArray))
+        //    {
+        //        // We need to overwrite only the cell we want to update and keep the rest. Here, the index value 
+        //        // resolves to 7 and the rest of the cells returned from the TryGetValue should remain untouched
+        //        myArray[(int)AWG.sequence_element_parameters.Seq_LoopCountValue] = response;
+
+        //        // Then overwrite the entry at that element number with the modified array
+        //        awg.sequence_element_dict.Remove(element);
+        //        awg.sequence_element_dict.Add(element, myArray);
+        //    }
+        //    else
+        //    {
+        //        // Then the element does not yet exist, and we have to add it with the index value we retreived
+        //        myArray[(int)AWG.sequence_element_parameters.Seq_LoopCountValue] = response;
+        //        awg.sequence_element_dict.Add(element, myArray);
+        //    }
+        //}
+
+        //! \todo (pwh): This step is untested
+        /// <summary>
+        /// Compares a sequence element's loop count against an expected value
+
+        /// Loop count setting for an element is ignored if SEQuence:ELEMent[n]:LOOP:INFinite is set to ON @n
+        /// SEQuence:ELEMent[n]:LOOP:COUNt(?)
+        /// </summary>
+        /// <param name="element">Sequence element</param>
+        /// <param name="awg_number">Which %AWG machine number</param>
+        /// <param name="expected_value">Expected loop count</param>
+		/*!
+			\sequence\verbatim
+        [Then(@"the loop count for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4]) should be ((?<!\S)[-+]?\d+(?!\S))")]
+			\endverbatim 
+		*/
+        //[Then(@"the loop count for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4]) should be ((?<!\S)[-+]?\d+(?!\S))")]
+        //public void TheLoopCountForSequenceElementShouldBe(string element, string awg_number, string expected_value)
+        //{
+        //    int awg_index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(awg_index);
+
+        //    string[] myArray; // A local, 'scratch' array
+
+        //    // See if the requested sequence element already has a dictionary entry            
+        //    if (awg.sequence_element_dict.TryGetValue(element, out myArray))
+        //    {
+        //        // If it does, then test the expected value against the Sequence Loop Count value in the array cell
+        //        Assert.AreEqual(expected_value, myArray[(int)AWG.sequence_element_parameters.Seq_LoopCountValue]);
+        //    }
+        //    else
+        //    {
+        //        // Otherwise, the test fails because the requested element was not defined, therefore cannot be the expected value
+        //        Assert.Fail("The requested sequence element was not found");
+        //    }
+        //}
+
+        //! \todo (pwh): Needs a high-order step for (1|0|ON|OFF) state values
+        //! \todo (pwh): This step is untested
+        // SEQuence:ELEMent[n]:LOOP:INFinite(?)
+        /// <summary>
+        /// Sets the infinite looping state for a sequence element.
+    
+        /// SEQuence:ELEMent[n]:LOOP:INFinite(?)
+        /// </summary>
+        /// <param name="element">Sequence element</param>
+        /// <param name="requested_state">Loop state</param>
+        /// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\sequence\verbatim
+        [When(@"I set the infinite loop state value for sequence element ((?<!\S)[-+]?\d+(?!\S)) to (.+) on AWG([1-4])")]
+			\endverbatim 
+		*/
+        //[When(@"I set the infinite loop state value for sequence element ((?<!\S)[-+]?\d+(?!\S)) to (.+) on AWG([1-4])")]
+        //public void ISetTheSequenceElementInfiniteLoopStateTo(string element, string requested_state, string awg_number)
+        //{
+        //    int awg_index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(awg_index);
+        //    string commandLine = "SEQuence:ELEMent" + element + ":LOOP:INFinite " + requested_state;
+        //    awg.AWGVisaSession.Write(commandLine);
+        //}
+
+        //! \todo (pwh): This step is untested
+        /// <summary>
+        /// Gets the infinite looping state for a sequence element.
+  
+        /// SEQuence:ELEMent[n]:LOOP:INFinite(?)
+        /// </summary>
+        /// <param name="element">Sequence element</param>
+        /// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\sequence\verbatim
+        [When(@"I get the infinite loop state for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4])")]
+			\endverbatim 
+		*/
+        //[When(@"I get the infinite loop state for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4])")]
+        //public void IGetTheSequenceElementInfiniteLoopState(string element, string awg_number)
+        //{
+        //    int awg_index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(awg_index);
+
+        //    string[] myArray; // A local, 'scratch' array
+        //    string response;
+
+        //    string commandLine = "SEQuence:ELEMent" + element + ":LOOP:INFinite?";
+        //    awg.AWGVisaSession.Query(commandLine, out response);
+
+        //    // See if the requested sequence element already has a dictionary entry
+        //    if (awg.sequence_element_dict.TryGetValue(element, out myArray))
+        //    {
+        //        // We need to overwrite only the cell we want to update and keep the rest. Here, the index value 
+        //        // resolves to 6 and the rest of the cells returned from the TryGetValue should remain untouched
+        //        myArray[(int)AWG.sequence_element_parameters.Seq_InfiniteLoopState] = response;
+
+        //        // Then overwrite the entry at that element number with the modified array
+        //        awg.sequence_element_dict.Remove(element);
+        //        awg.sequence_element_dict.Add(element, myArray);
+        //    }
+        //    else
+        //    {
+        //        // Then the element does not yet exist, and we have to add it with the index value we retreived
+        //        myArray[(int)AWG.sequence_element_parameters.Seq_InfiniteLoopState] = response;
+        //        awg.sequence_element_dict.Add(element, myArray);
+        //    }
+        //}
+
+        //! \todo (pwh): This step is untested
+        /// <summary>
+        /// Compares the infinite looping state for a sequence element against the expected value.
+       
+        /// SEQuence:ELEMent[n]:LOOP:INFinite(?)
+        /// </summary>
+        /// <param name="element">Sequence element</param>
+        /// <param name="awg_number">Which %AWG machine number</param>
+        /// <param name="expected_value">Expected loop state</param>
+		/*!
+			\sequence\verbatim
+        [Then(@"the infinite loop state value for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4]) should be (.+)")]
+			\endverbatim 
+		*/
+        //[Then(@"the infinite loop state value for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4]) should be (.+)")]
+        //public void TheSequenceElementInfiniteLoopStateShouldBe(string element, string awg_number, string expected_value)
+        //{
+        //    int awg_index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(awg_index);
+
+        //    string[] myArray; // A local, 'scratch' array
+
+        //    // See if the requested sequence element already has a dictionary entry            
+        //    if (awg.sequence_element_dict.TryGetValue(element, out myArray))
+        //    {
+        //        // If it does, then test the expected value against the Sequence Infinite Loop State value in the array cell
+        //        Assert.AreEqual(expected_value, myArray[(int)AWG.sequence_element_parameters.Seq_InfiniteLoopState]);
+        //    }
+        //    else
+        //    {
+        //        // Otherwise, the test fails because the requested element was not defined, therefore cannot be the expected value
+        //        Assert.Fail("The requested sequence element was not found");
+        //    }
+        //}
+
+        //! \todo  (pwh): Needs a high-order step for (1|0|ON|OFF) state values
+        //! \todo  (pwh): This step is untested
+        // SEQuence:ELEMent[n]:TWAit(?)        
+        /// <summary>
+        /// Sets the wait trigger state for an element
+     
+        /// SEQuence:ELEMent[n]:TWAit(?)
+        /// </summary>
+        /// <param name="element">Sequence element</param>
+        /// <param name="requested_state">Wait trigger state</param>
+        /// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\sequence\verbatim
+        [When(@"I set the wait trigger state value for sequence element ((?<!\S)[-+]?\d+(?!\S)) to (.+) on AWG([1-4])")]
+			\endverbatim 
+		*/
+        //[When(@"I set the wait trigger state value for sequence element ((?<!\S)[-+]?\d+(?!\S)) to (.+) on AWG([1-4])")]
+        //public void ISetTheSequenceElementWaitTriggerStateTo(string element, string requested_state, string awg_number)
+        //{
+        //    int awg_index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(awg_index);
+        //    string commandLine = "SEQuence:ELEMent" + element + ":TWAit " + requested_state;
+        //    awg.AWGVisaSession.Write(commandLine);
+        //}
+
+        //! \todo (pwh): This step is untested
+        /// <summary>
+        /// Gets the wait trigger state for an element
+      
+        /// SEQuence:ELEMent[n]:TWAit(?)
+        /// </summary>
+        /// <param name="element">Sequence element</param>
+        /// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\sequence\verbatim
+        [When(@"I get the wait trigger state for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4])")]
+			\endverbatim 
+		*/
+        //[When(@"I get the wait trigger state for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4])")]
+        //public void IGetTheSequenceElementWaitTriggerState(string element, string awg_number)
+        //{
+        //    int awg_index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(awg_index);
+
+        //    string[] myArray; // A local, 'scratch' array
+        //    string response;
+
+        //    string commandLine = "SEQuence:ELEMent" + element + ":TWAIt?";
+        //    awg.AWGVisaSession.Query(commandLine, out response);
+
+        //    // See if the requested sequence element already has a dictionary entry
+        //    if (awg.sequence_element_dict.TryGetValue(element, out myArray))
+        //    {
+        //        // We need to overwrite only the cell we want to update and keep the rest. Here, the index value 
+        //        // resolves to 5 and the rest of the cells returned from the TryGetValue should remain untouched
+        //        myArray[(int)AWG.sequence_element_parameters.Seq_WaitTrigState] = response;
+
+        //        // Then overwrite the entry at that element number with the modified array
+        //        awg.sequence_element_dict.Remove(element);
+        //        awg.sequence_element_dict.Add(element, myArray);
+        //    }
+        //    else
+        //    {
+        //        // Then the element does not yet exist, and we have to add it with the index value we retreived
+        //        myArray[(int)AWG.sequence_element_parameters.Seq_WaitTrigState] = response;
+        //        awg.sequence_element_dict.Add(element, myArray);
+        //    }
+        //}
+
+        //! \todo (pwh): This step is untested
+        /// <summary>
+        /// Compares the wait trigger state for an element against the expected value
+      
+        /// SEQuence:ELEMent[n]:TWAit(?)
+        /// </summary>
+        /// <param name="element">Sequence element</param>
+        /// <param name="awg_number">Which %AWG machine number</param>
+        /// <param name="expected_value">Expected wait trigger state</param>
+		/*!
+			\sequence\verbatim
+        [Then(@"the wait trigger state value for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4]) should be (.+)")]
+			\endverbatim 
+		*/
+        //[Then(@"the wait trigger state value for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4]) should be (.+)")]
+        //public void TheSequenceElementWaitTriggerStateShouldBe(string element, string awg_number, string expected_value)
+        //{
+        //    int awg_index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(awg_index);
+
+        //    string[] myArray; // A local, 'scratch' array
+
+        //    // See if the requested sequence element already has a dictionary entry            
+        //    if (awg.sequence_element_dict.TryGetValue(element, out myArray))
+        //    {
+        //        // If it does, then test the expected value against the Sequence Wait Trigger State value in the array cell
+        //        Assert.AreEqual(expected_value, myArray[(int)AWG.sequence_element_parameters.Seq_WaitTrigState]);
+        //    }
+        //    else
+        //    {
+        //        // Otherwise, the test fails because the requested element was not defined, therefore cannot be the expected value
+        //        Assert.Fail("The requested sequence element was not found");
+        //    }
+        //}
+
+        //! \todo (pwh): This step is untested
+        /// <summary>
+        /// Sets the waveform for a sequence element.
+     
+        /// SEQuence:ELEMent[n]:WAVeform[n](?)
+        /// </summary>
+        /// <param name="wfm_name">Waveform Name</param>
+        /// <param name="channel_number">Output channel number</param>
+        /// <param name="sequence_element">Sequence element</param>
+        /// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\sequence\verbatim
+        [When(@"I set the ""(.+)"" waveform into output channel (1|2|3|4) for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4])")]
+			\endverbatim 
+		*/
+        //[When(@"I set the ""(.+)"" waveform into output channel (1|2|3|4) for sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4])")]
+        //public void ISetTheWaveformNameIntoOutputChannelForSequenceElement(string wfm_name, string channel_number, string sequence_element, string awg_number)
+        //{
+        //    int awg_index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(awg_index);
+        //    string commandLine = "SEQuence:ELEMent" + sequence_element + ":WAVeform" + channel_number + " " + wfm_name; //The required quotes are included int the regex match
+        //    awg.AWGVisaSession.Write(commandLine);
+        //}
+
+        //! \todo (pwh): This step is untested
+        /// <summary>
+        /// Gets the waveform for a sequence element.
+     
+        /// SEQuence:ELEMent[n]:WAVeform[n](?)
+        /// </summary>
+        /// <param name="channel_string">Output channel number</param>
+        /// <param name="element">Sequence element</param>
+        /// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\sequence\verbatim
+        [When(@"I get the waveform name for output channel (1|2|3|4) of sequence element ((?<!\S)[-+]?\d+(?!\S)) from AWG([1-4])")]
+			\endverbatim 
+		*/
+        //[When(@"I get the waveform name for output channel (1|2|3|4) of sequence element ((?<!\S)[-+]?\d+(?!\S)) from AWG([1-4])")]
+        //public void IGetTheWaveformNameInOutputChannelForSequenceElement(string channel_string, string element, string awg_number) 
+        //{
+        //    int awg_index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(awg_index);
+
+        //    string[] myArray; // A local, 'scratch' array
+        //    string response;
+        //    string commandLine;
+        //    int array_index;
+
+        //    commandLine = "SEQuence:ELEMent" + element + ":WAVeform" + channel_string + "?";
+        //    awg.AWGVisaSession.Query(commandLine, out response);
+
+        //    // Convert the channel number that was passed into an Int for use as the array index
+        //    array_index = Convert.ToInt16(channel_string);
+
+        //    // See if the requested sequence element already has a dictionary entry
+        //    if (awg.sequence_element_dict.TryGetValue(element, out myArray))
+        //    {
+        //        // We need to overwrite only the cell we want to update and keep the rest. In this case, the index
+        //        // for the right cell in the array was designed to match the requested channel number, so we don't have to 
+        //        // do anything complicated with looking up the array index value.
+        //        myArray[array_index] = response;
+
+        //        // Then overwrite the entry at that element number with the modified array
+        //        awg.sequence_element_dict.Remove(element);
+        //        awg.sequence_element_dict.Add(element, myArray);
+        //    }
+        //    else
+        //    {
+        //        // Then the element does not yet exist, and we have to add it with the index value we retreived
+        //        myArray[array_index] = response;
+        //        awg.sequence_element_dict.Add(element, myArray);
+        //    }
+        //}
+
+        //! \todo (pwh): This step is untested
+        /// <summary>
+        /// Compares the waveform for a sequence element to the expected value
+     
+        /// SEQuence:ELEMent[n]:WAVeform[n](?)
+        /// </summary>
+        /// <param name="channel_string">Output channel number</param>
+        /// <param name="element">Sequence element</param>
+        /// <param name="awg_number">Which %AWG machine number</param>
+        /// <param name="expected_value">Expected waveform</param>
+		/*!
+			\sequence\verbatim
+        [Then(@"the waveform name for output channel (1|2|3|4) of sequence element ((?<!\S)[-+]?\d+(?!\S)) from AWG([1-4]) should be ""(.+)""")]
+			\endverbatim 
+		*/
+        //[Then(@"the waveform name for output channel (1|2|3|4) of sequence element ((?<!\S)[-+]?\d+(?!\S)) from AWG([1-4]) should be ""(.+)""")]
+        //public void TheSequenceElementWaitTriggerStateShouldBe(string channel_string, string element, string awg_number, string expected_value)
+        //{
+        //    int awg_index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(awg_index);
+
+        //    string[] myArray; // A local, 'scratch' array
+        //    int array_index;
+            
+        //    // Convert the channel number that was passed into an Int for use as the array index
+        //    array_index = Convert.ToInt16(channel_string);
+
+        //    // See if the requested sequence element already has a dictionary entry            
+        //    if (awg.sequence_element_dict.TryGetValue(element, out myArray))
+        //    {
+        //        // If it does, then test the expected value against the Sequence Wait Trigger State value in the array cell
+        //        Assert.AreEqual(expected_value, myArray[array_index]);
+        //    }
+        //    else
+        //    {
+        //        // Otherwise, the test fails because the requested element was not defined, therefore cannot be the expected value
+        //        Assert.Fail("The requested sequence element was not found");
+        //    }
+        //}
+
+        //! \todo (pwh): This step is untested
+        /// <summary>
+        /// Forces the sequencer to jump to the specified element index. 
+
+        /// This is called a Force jump. @n
+        /// SEQuence:JUMP[:IMMediate] "target" (no query)
+        /// </summary>
+        /// <param name="element">Element index</param>
+        /// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\sequence\verbatim
+        [When(@"I force a jump to sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4])")]
+			\endverbatim 
+		*/
+        //[When(@"I force a jump to sequence element ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4])")]
+        //public void IJumpToSequenceElement(string element, string awg_number)
+        //{
+        //    int awg_index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(awg_index);
+
+        //    string commandLine = "SEQuence:JUMP:IMMediate " + element;
+        //    awg.AWGVisaSession.Write(commandLine);
+
+        //}
+
+        /// <summary>
+        /// Sets the sequence length.
+        /// 
+        /// Use this command to create an uninitialized sequence @n
+        /// SEQuence:LENGth(?) 
+        /// </summary>
+        /// <param name="length">Sequence length</param>
+        /// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\sequence\verbatim
+        [When(@"I set the sequence length to ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4])")]
+			\endverbatim 
+		*/
+        //[When(@"I set the sequence length to ((?<!\S)[-+]?\d+(?!\S)) on AWG([1-4])")]
+        //public void ISetTheSequenceLengthTo(string length, string awg_number)
+        //{
+        //    int awg_index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(awg_index);
+
+        //    string commandLine = "SEQuence:LENGth " + length;
+        //    awg.AWGVisaSession.Write(commandLine);
+        //}
+
+        /// <summary>
+        /// Gets the sequence length.
+       
+        /// SEQuence:LENGth(?) 
+        /// </summary>
+        /// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\sequence\verbatim
+        [When(@"I get the sequence length from AWG([1-4])")]
+			\endverbatim 
+		*/
+        //[When(@"I get the sequence length from AWG([1-4])")]
+        //public void IGetTheSequenceLengthFrom(string awg_number)
+        //{
+        //    string response;
+            
+        //    int index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(index);
+        //    awg.AWGVisaSession.Query("SEQuence:LENGth?", out response);
+        //    awg.sequence_length = response;
+        //}
+
+        /// <summary>
+        /// Compares the sequence length against the expected value.
+
+        /// SEQuence:LENGth(?) 
+        /// </summary>
+        /// <param name="awg_number">Which %AWG machine number</param>
+        /// <param name="expected_value">Expected sequence length</param>
+		/*!
+			\sequence\verbatim
+        [Then(@"the sequence length on AWG([1-4]) should be ((?<!\S)[-+]?\d+(?!\S))")]
+			\endverbatim 
+		*/
+        //[Then(@"the sequence length on AWG([1-4]) should be ((?<!\S)[-+]?\d+(?!\S))")]
+        //public void TheSequenceLengthShouldBe(string awg_number, string expected_value)
+        //{
+        //    int index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(index);
+        //    Assert.AreEqual(expected_value, awg.sequence_length);
+        //}
+
+        //! \todo (pwh): This step is untested
+        /// <summary>
+        /// Sets the subsequence for a sequence element
+     
+        /// SEQuence:ELEMent[n]:SUBSequence(?)
+        /// </summary>
+        /// <param name="subsequence_name">Subsequence name</param>
+        /// <param name="element">Sequence element</param>
+        /// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\sequence\verbatim
+        [When(@"I insert subsequence ""(.+)"" at position ((?<!\S)[-+]?\d+(?!\S)) of the main sequence on AWG([1-4])")]
+			\endverbatim 
+		*/
+        //[When(@"I insert subsequence ""(.+)"" at position ((?<!\S)[-+]?\d+(?!\S)) of the main sequence on AWG([1-4])")]
+        //public void IInsertSubsequenceAtPositionOfTheMainSequence(string subsequence_name, string element, string awg_number)
+        //{
+        //    int awg_index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(awg_index);
+
+        //    string commandLine = "SEQuence:ELEment" + element + ":SUBsequence" + subsequence_name;
+        //    awg.AWGVisaSession.Write(commandLine);            
+        //}
+
+        //! \todo (pwh): This step is untested
+        /// <summary>
+        /// Gets the subsequence for a sequence element
+      
+        /// SEQuence:ELEMent[n]:SUBSequence(?)
+        /// </summary>
+        /// <param name="element">Sequence element</param>
+        /// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\sequence\verbatim
+        [When(@"I get the name of the subsequence at position ((?<!\S)[-+]?\d+(?!\S)) of the main sequence on AWG([1-4])")]
+			\endverbatim 
+		*/
+        //[When(@"I get the name of the subsequence at position ((?<!\S)[-+]?\d+(?!\S)) of the main sequence on AWG([1-4])")]
+        //public void IGetSubsequenceNameAtPositionOfTheMainSequence(string element, string awg_number)
+        //{
+        //    int awg_index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(awg_index);
+
+        //    string[] myArray; // A local, 'scratch' array
+        //    string response;
+        //    string commandLine;
+
+        //    // Get the subsequence name from the instrument
+        //    commandLine = "SEQuence:ELEment" + element + ":SUBsequence?";
+        //    awg.AWGVisaSession.Query(commandLine, out response);            
+
+        //    // See if the requested sequence element already has a dictionary entry
+        //    if (awg.sequence_element_dict.TryGetValue(element, out myArray))
+        //    {
+        //        // We need to overwrite only the cell we want to update and keep the rest. Here, the index value 
+        //        // resolves to 11 and the rest of the cells returned from the TryGetValue should remain untouched
+        //        myArray[(int)AWG.sequence_element_parameters.Seq_SubsequenceName] = response;
+
+        //        // Then overwrite the entry at that element number with the modified array
+        //        awg.sequence_element_dict.Remove(element);
+        //        awg.sequence_element_dict.Add(element, myArray);
+        //    }
+        //    else
+        //    {
+        //        // Then the element does not yet exist, and we have to add it with the index value we retreived
+        //        myArray[(int)AWG.sequence_element_parameters.Seq_SubsequenceName] = response;
+        //        awg.sequence_element_dict.Add(element, myArray);
+        //    }
+        //}
+
+        //! \todo (pwh): This step is untested
+        /// <summary>
+        /// Compares the subsequence for a sequence element against the expected value.
+   
+        /// SEQuence:ELEMent[n]:SUBSequence(?)
+        /// </summary>
+        /// <param name="element">Sequence element</param>
+        /// <param name="awg_number">Which %AWG machine number</param>
+        /// <param name="expected_value">Expected subsequence name</param>
+		/*!
+			\sequence\verbatim
+        [Then(@"the name of the subsequence at position ((?<!\S)[-+]?\d+(?!\S)) of the main sequence on AWG([1-4]) should be ""(.+)""")]
+			\endverbatim 
+		*/
+        //[Then(@"the name of the subsequence at position ((?<!\S)[-+]?\d+(?!\S)) of the main sequence on AWG([1-4]) should be ""(.+)""")]
+        //public void TheNameOfTheSubsequenceAtPositionOfTheMainSequenceShouldBe(string element, string awg_number, string expected_value)
+        //{
+        //    int awg_index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(awg_index);
+
+        //    string[] myArray; // A local, 'scratch' array
+
+        //    // See if the requested sequence element already has a dictionary entry            
+        //    if (awg.sequence_element_dict.TryGetValue(element, out myArray))
+        //    {
+        //        // If it does, then test the expected value against the Sequence Wait Trigger State value in the array cell
+        //        Assert.AreEqual(expected_value, myArray[(int)AWG.sequence_element_parameters.Seq_SubsequenceName]);
+        //    }
+        //    else
+        //    {
+        //        // Otherwise, the test fails because the requested element was not defined, therefore cannot be the expected value
+        //        Assert.Fail("The requested sequence element was not found");
+        //    }
+        //}

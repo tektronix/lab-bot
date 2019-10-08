@@ -1,0 +1,667 @@
+/// <summary>
+		/// Sets the import frequency parameter state. 
+
+		/// MMEMory:IMPort:PARameter:FREQuency[:UPDate][:STATe](?)
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/// <param name="value">Frequency parameter state value</param> 
+		/*!
+			@massmemory\verbatim
+		[When(@"I set the value for automatic modification of the sampling rate when importing waveform data on AWG([1-4]) to (.+)")]
+			\endverbatim 
+		*/
+		//[When(@"I set the value for automatic modification of the sampling rate when importing waveform data on AWG([1-4]) to (.+)")]
+		//public void ISetTheImportParameterFrequencyUpdateState(string awg_number, string value)
+		//{
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    string commandLine = "MMEMory:IMPort:PARameter:FREQuency:UPDate:STATe " + value;
+		//    awg.AWGVisaSession.Write(commandLine);
+		//}
+
+		/// <summary>
+		/// Gets the import frequency parameter state. 
+
+		/// MMEMory:IMPort:PARameter:FREQuency[:UPDate][:STATe](?)
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			@massmemory\verbatim
+		[When(@"I get the state value for automatic modification of sampling rate when importing waveform data from AWG([1-4])")]
+			\endverbatim 
+		*/
+		//[When(@"I get the state value for automatic modification of sampling rate when importing waveform data from AWG([1-4])")]
+		//public void IGetTheImportParameterFrequencyUpdateState(string awg_number)
+		//{
+		//    string response;
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    awg.AWGVisaSession.Query("MMEMory:IMPort:PARameter:FREQuency:UPDate:STATe?", out response);
+		//    awg.import_parameter_frequency_update_state = response;
+		//}
+
+		/// <summary>
+		/// Compares the import frequency parameter state to the expected value
+	
+		/// MMEMory:IMPort:PARameter:FREQuency[:UPDate][:STATe](?)
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/// <param name="expected_value">Expected frequency parameter state value</param>
+		/*!
+			@massmemory\verbatim
+		[Then(@"the value returned when checking the automatic modification of sampling rate when importing waveform data on AWG([1-4]) should be (.+)")]
+			\endverbatim 
+		*/
+		//[Then(@"the value returned when checking the automatic modification of sampling rate when importing waveform data on AWG([1-4]) should be (.+)")]
+		//public void TheImportParameterFrequencyUpdateStateShouldBe(string awg_number, string expected_value)
+		//{
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    Assert.AreEqual(expected_value, awg.import_parameter_frequency_update_state);
+		//}        
+
+		/// <summary>
+		/// Sets the channel which the amplitude and offset values will be updated during import
+		 
+		/// MMEMory:IMPort:PARameter:LEVel[:UPDate]:CHANnel(?)
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/// <param name="value">Channel</param>
+		/*!
+			@massmemory\verbatim
+		[When(@"I set the channel value for automatic modification of amplitude and offset when importing waveform data on AWG([1-4]) to (.+)")]
+			\endverbatim 
+		*/
+		//[When(@"I set the channel value for automatic modification of amplitude and offset when importing waveform data on AWG([1-4]) to (.+)")]
+		//public void ISetTheImportParameterLevelUpdateChannel(string awg_number, string value)
+		//{
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    string commandLine = "MMEMory:IMPort:PARameter:LEVel:UPDate:CHANnel " + value;
+		//    awg.AWGVisaSession.Write(commandLine);
+		//}
+
+		/// <summary>
+		/// Gets the channel which the amplitude and offset values will be updated during import 
+	  
+		/// MMEMory:IMPort:PARameter:LEVel[:UPDate]:CHANnel(?)
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			@massmemory\verbatim
+		[When(@"I get the channel for automatic modification of amplitude and offset when importing waveform data from AWG([1-4])")]
+			\endverbatim 
+		*/
+		//[When(@"I get the channel for automatic modification of amplitude and offset when importing waveform data from AWG([1-4])")]
+		//public void IGetTheImportParameterLevelUpdateChannel(string awg_number)
+		//{
+		//    string response;
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    awg.AWGVisaSession.Query("MMEMory:IMPort:PARameter:LEVel:UPDate:CHANnel?", out response);
+		//    awg.import_parameter_level_update_channel = response;
+		//}
+		
+		/// <summary>
+		/// Compares the channel which the amplitude and offset values will be updated during import against the expected channel
+	 
+		/// MMEMory:IMPort:PARameter:LEVel[:UPDate]:CHANnel(?)
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/// <param name="expected_value">Expected channel</param>
+		/*!
+			@massmemory\verbatim
+		[Then(@"the channel value returned for automatic modification of amplitude and offset when importing waveform data on AWG([1-4]) should be (\d)")]
+			\endverbatim 
+		*/
+		//[Then(@"the channel value returned for automatic modification of amplitude and offset when importing waveform data on AWG([1-4]) should be (\d)")]
+		//public void TheImportParameterLevelUpdateChannelValueShouldBe(string awg_number, string expected_value)
+		//{
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    Assert.AreEqual(expected_value, awg.import_parameter_level_update_channel);
+		//}  
+
+		/// <summary>
+		/// Sets the import level parameter state
+	  
+		/// The LEVel parameter which determines whether amplitude and offsets are modified during waveform import. 
+		/// If this value is set, the instrument amplitude and offset are automatically updated during waveform import.
+		/// MMEMory:IMPort:PARameter:LEVel[:UPDate][:STATe](?)
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/// <param name="value">Import level parameter state</param>
+		/*!
+			@massmemory\verbatim
+		[When(@"I set the state value for automatic modification of amplitude and offset when importing waveform data on AWG([1-4]) to (.+)")]
+			\endverbatim 
+		*/
+		//[When(@"I set the state value for automatic modification of amplitude and offset when importing waveform data on AWG([1-4]) to (.+)")]
+		//public void ISetTheImportParameterLevelUpdateStateValue(string awg_number, string value)
+		//{
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    string commandLine = "MMEMory:IMPort:PARameter:LEVel:UPDate:STATe " + value;
+		//    awg.AWGVisaSession.Write(commandLine);
+		//}
+
+		/// <summary>
+		/// Gets the import level parameter state
+
+		/// MMEMory:IMPort:PARameter:LEVel[:UPDate][:STATe](?)
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			@massmemory\verbatim
+		[When(@"I get the state for automatic modification of amplitude and offset when importing waveform data from AWG([1-4])")]
+			\endverbatim 
+		*/
+		//[When(@"I get the state for automatic modification of amplitude and offset when importing waveform data from AWG([1-4])")]
+		//public void IGetTheImportParameterLevelUpdateState(string awg_number)
+		//{
+		//    string response;
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    awg.AWGVisaSession.Query("MMEMory:IMPort:PARameter:LEVel:UPDate:STATe?", out response);
+		//    awg.import_parameter_level_update_state = response;
+		//}
+		/// <summary>
+		/// Compares import level parameter state against the expected value. 
+	  
+		/// MMEMory:IMPort:PARameter:LEVel[:UPDate][:STATe](?)
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/// <param name="expected_value">Expected import level parameter state value</param>
+		/*!
+			@massmemory\verbatim
+		[Then(@"the state value returned for automatic modification of amplitude and offset when importing waveform data on AWG([1-4]) should be (.+)")]
+			\endverbatim 
+		*/
+		//[Then(@"the state value returned for automatic modification of amplitude and offset when importing waveform data on AWG([1-4]) should be (.+)")]
+		//public void TheImportParameterLevelUpdateStateValueShouldBe(string awg_number, string expected_value)
+		//{
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    Assert.AreEqual(expected_value, awg.import_parameter_level_update_state);
+		//}  
+
+		/// <summary>
+		/// Sets which data type’s amplitude and offset values are selected for update during RSA file import
+		
+		/// NOTE: This command is effective only when MMEMory:IMPort:PARameter:LEVel[:UPDate][:STATe] 
+		/// is set to True and IQT or TIQ is selected as the "Type" for the MMEMory:IMPort command.  
+		/// MMEMory:IMPort:PARameter:LEVel[:UPDate]:TYPE
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/// <param name="value">Data type</param>
+		/*!
+			@massmemory\verbatim
+		[When(@"I set value for the type of RSA data to be imported to AWG([1-4]) as (.+)")]
+			\endverbatim 
+		*/
+		//[When(@"I set value for the type of RSA data to be imported to AWG([1-4]) as (.+)")]
+		//public void ISetTheValueForTheTypeOfRSADataToBeImported(string awg_number, string value)
+		//{
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    string commandLine = "MMEMory:IMPort:PARameter:LEVel[:UPDate]:TYPE " + value;
+		//    awg.AWGVisaSession.Write(commandLine);
+		//}
+
+		/// <summary>
+		/// Gets which data’s amplitude and offset values are selected for update during RSA file import
+
+		/// MMEMory:IMPort:PARameter:LEVel[:UPDate]:TYPE
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			@massmemory\verbatim
+		[When(@"I get the type of RSA data to be imported to AWG([1-4])")]
+			\endverbatim 
+		*/
+		//[When(@"I get the type of RSA data to be imported to AWG([1-4])")]
+		//public void IGetTheTypeOfRSADataToBeImported(string awg_number)
+		//{
+		//    string response;
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    awg.AWGVisaSession.Query("MMEMory:IMPort:PARameter:LEVel:UPDate:STATe?", out response);
+		//    awg.import_parameter_rsa_data_type = response;
+		//}
+
+		/// <summary>
+		/// Compares which data type's amplitude and offset values are selected for update during RSA file import against the expected value
+
+		/// MMEMory:IMPort:PARameter:LEVel[:UPDate]:TYPE
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/// <param name="expected_value">Expected data type</param>
+		/*!
+			@massmemory\verbatim
+		[Then(@"the value for the type of RSA data selected for import on AWG([1-4]) should be (.+)")]
+			\endverbatim 
+		*/
+		//[Then(@"the value for the type of RSA data selected for import on AWG([1-4]) should be (.+)")]
+		//public void TheValueForTheTypeOfRSADataToBeImportedShouldBe(string awg_number, string expected_value)
+		//{
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    Assert.AreEqual(expected_value, awg.import_parameter_rsa_data_type);
+		//}  
+
+		/// <summary>
+		/// Sets the sampling rate parameter for resampling
+		
+		/// NOTE: This command will take effect only when the MMEMory:IMPort:PARameter:FREQuency[:UPDate][:STATe] command is set to True.
+		/// Resampling setting is ignored if the MMEMory:IMPort:PARameter:FREQuency[:UPDate][:STATe] command is set to False.
+		/// MMEMory:IMPort:PARameter:RESampling:FREQuency
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/// <param name="value">Sampling rate parameter</param>
+		/*!
+			@massmemory\verbatim
+		[When(@"I set the resampling frequency of data to be imported on AWG([1-4]) to ([-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)")]
+			\endverbatim 
+		*/
+		//[When(@"I set the resampling frequency of data to be imported on AWG([1-4]) to ([-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)")]
+		//public void ISetTheResamplingFrequencyOfDataToBeImported(string awg_number, string value)
+		//{
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    string commandLine = "MMEMory:IMPort:PARameter:RESampling:FREQuency " + value;
+		//    awg.AWGVisaSession.Write(commandLine);
+		//}
+
+		/// <summary>
+		///  Gets the sampling rate parameter for resampling
+	   
+		///  MMEMory:IMPort:PARameter:RESampling:FREQuency
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			@massmemory\verbatim
+		[When(@"I get the resampling frequency of data to be imported on AWG([1-4])")]
+			\endverbatim 
+		*/
+		//[When(@"I get the resampling frequency of data to be imported on AWG([1-4])")]
+		//public void IGetTheResamplingFrequencynOfDataToBeImported(string awg_number)
+		//{
+		//    string response;
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    awg.AWGVisaSession.Query("MMEMory:IMPort:PARameter:RESampling:FREQuency?", out response);
+		//    awg.import_parameter_resampling_frequency = response;
+		//}
+
+		/// <summary>
+		///  Compares the sampling rate parameter for resampling to the expected value
+	
+		///  MMEMory:IMPort:PARameter:RESampling:FREQuency
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/// <param name="expected_value">Expected sampling rate parameter</param>
+		/*!
+			@massmemory\verbatim
+		[Then(@"the resampling frequency of data to be imported on AWG([1-4]) should be ([-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)")]
+			\endverbatim 
+		*/
+		//[Then(@"the resampling frequency of data to be imported on AWG([1-4]) should be ([-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)")]
+		//public void TheResamplingFrequencyOfDataToBeImportedShouldBe(string awg_number, string expected_value)
+		//{
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    Assert.AreEqual(expected_value, awg.import_parameter_resampling_frequency);
+		//}  
+ 
+		/// <summary>
+		/// Sets resampling state for waveform import.
+   
+		/// Note:This command is effective only when waveform data to be imported must have sampling rate information
+		/// Waveform data to be imported must have sampling rate information.
+		/// and MMEMory:IMPort:PARameter:FREQuency[:UPDate][:STATe] command must be set to True.
+		/// MMEMory:IMPort:PARameter:RESampling[:STATe](?)
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/// <param name="value">Resampling state</param>
+		/*!
+			@massmemory\verbatim
+		[When(@"I set the value for the resampling state when importing waveform data on AWG([1-4]) to (.+)")]
+			\endverbatim 
+		*/
+		//[When(@"I set the value for the resampling state when importing waveform data on AWG([1-4]) to (.+)")]
+		//public void ISetTheImportParameterResamplingStateValue(string awg_number, string value)
+		//{
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    string commandLine = "MMEMory:IMPort:PARameter:FREQuency:UPDate:STATe " + value;
+		//    awg.AWGVisaSession.Write(commandLine);
+		//}
+
+		/// <summary>
+		/// Gets resampling state for waveform import.
+  
+		/// MMEMory:IMPort:PARameter:RESampling[:STATe](?)
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			@massmemory\verbatim
+		[When(@"I get the value of the resampling state when importing waveform data on AWG([1-4])")]
+			\endverbatim 
+		*/
+		//[When(@"I get the value of the resampling state when importing waveform data on AWG([1-4])")]
+		//public void IGetTheImportParameterResamplingState(string awg_number)
+		//{
+		//    string response;
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    awg.AWGVisaSession.Query("MMEMory:IMPort:PARameter:FREQuency:UPDate:STATe?", out response);
+		//    awg.import_parameter_frequency_update_state = response;
+		//}
+	   
+		/// <summary>
+		/// Tests the resampling state against the expected value
+	
+		/// MMEMory:IMPort:PARameter:RESampling[:STATe](?)
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/// <param name="expected_value">Expected resampling state</param>
+		/*!
+			@massmemory\verbatim
+		[Then(@"the value of the resampling state when importing waveform data on AWG([1-4]) should be (.+)")]
+			\endverbatim 
+		*/
+		//[Then(@"the value of the resampling state when importing waveform data on AWG([1-4]) should be (.+)")]
+		//public void TheImportParameterResamplingStateValueShouldBe(string awg_number, string expected_value)
+		//{
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    Assert.AreEqual(expected_value, awg.import_parameter_resampling_state);
+		//}
+
+High Steps ************************************
+
+/// <summary>
+	/// Sets the import frequency parameter state. 
+
+	/// Frequency parameter determines whether frequency is modified during waveform import on or off. 
+	/// If this value is set, the sampling rate is automatically updated during waveform import
+	/// MMEMory:IMPort:PARameter:FREQuency[:UPDate][:STATe](?)
+	/// </summary>
+	/// <param name="awg_number">Which %AWG machine number</param>
+	/// <param name="value">Frequency parameter state value 1|0|ON|OFF </param> 
+	/*!
+		\massmemory\verbatim
+			[When(@"I set the value of automatic modification of the sampling rate when importing waveform data on AWG([1-4]) to (1|0|ON|OFF)")]
+		\endverbatim 
+	  */
+	//[When(@"I set the value of automatic modification of the sampling rate when importing waveform data on AWG([1-4]) to (1|0|ON|OFF)")]
+	//public void ISetTheImportParameterFrequencyUpdateState_High(string awg_number, string value)
+	//{
+	//    string interpreted_value;
+	//    switch (value)
+	//    {
+	//        case "ON":
+	//            interpreted_value = "1";
+	//            break;
+
+	//        case "OFF":
+	//            interpreted_value = "0";
+	//            break;
+
+	//        default:
+	//            interpreted_value = value;
+	//            break;
+	//    }
+	//    MassMemStepsLow.ISetTheImportParameterFrequencyUpdateState(awg_number, interpreted_value);
+	//}
+
+	/// <summary>
+	/// Tests the import frequency parameter state. 
+
+	/// Compares the import frequency parameter state to the expected value of on or off. 
+	/// Frequency parameter determines whether frequency is modified during waveform import on or off.@n
+	/// MMEMory:IMPort:PARameter:FREQuency[:UPDate][:STATe](?)
+	/// </summary>
+	/// <param name="awg_number">Which %AWG machine number</param>
+	/// <param name="expected_value">Expected import frequency parameter state 1|0</param>
+	/*!
+		\massmemory\verbatim
+			[Then(@"the value returned when checking the automatic modification of sampling rate when importing waveform data on AWG([1-4]) should be (1|0|ON|OFF)")]
+		\endverbatim 
+	  */
+	//[Then(@"the value returned when checking the automatic modification of sampling rate when importing waveform data on AWG([1-4]) should be (1|0|ON|OFF)")]
+	//public void TheImportParameterFrequencyUpdateStateShouldBe_High(string awg_number, string expected_value)
+	//{
+	//    string interpreted_value;
+	//    switch (expected_value)
+	//    {
+	//        case "ON":
+	//            interpreted_value = "1";
+	//            break;
+
+	//        case "OFF":
+	//            interpreted_value = "0";
+	//            break;
+
+	//        default:
+	//            interpreted_value = expected_value;
+	//            break;
+	//    }
+	//    MassMemStepsLow.TheImportParameterFrequencyUpdateStateShouldBe(awg_number, interpreted_value);
+	//}
+
+
+	/// <summary>
+	/// Sets the channel for which the amplitude and offset values will be updated during import
+	/// 
+	/// NOTE:This command is effective only when MMEMory:IMPort:PARameter:LEVel[:UPDate][:STATe] is set to 1@n
+	/// MMEMory:IMPort:PARameter:LEVel[:UPDate]:CHANnel(?)
+	/// </summary>
+	/// <param name="awg_number">Which %AWG machine number</param>
+	/// <param name="value">Channel 1|2|3|4</param>
+	/*!
+		\massmemory\verbatim
+			[When(@"I set the channel for automatic modification of amplitude and offset when importing waveform data on AWG([1-4]) to (1|2|3|4)")]
+		\endverbatim 
+	  */
+	//[When(@"I set the channel for automatic modification of amplitude and offset when importing waveform data on AWG([1-4]) to (1|2|3|4)")]
+	//public void ISetTheImportParameterLevelUpdateChannel_High(string awg_number, string value)
+	//{
+	//    MassMemStepsLow.ISetTheImportParameterLevelUpdateChannel(awg_number, value);
+	//}
+
+
+	/// <summary>
+	/// Tests that the channel for which the amplitude and offset values will be updated during import is the expected channel.
+	/// 
+	/// MMEMory:IMPort:PARameter:LEVel[:UPDate]:CHANnel(?)
+	/// </summary>
+	/// <param name="awg_number">Which %AWG machine number</param>
+	/// <param name="expected_value">Expected channel</param>
+	/*!
+		\massmemory\verbatim
+			[Then(@"the channel returned for automatic modification of amplitude and offset when importing waveform data on AWG([1-4]) should be (1|2|3|4)")]
+		\endverbatim 
+	  */
+	//[Then(@"the channel returned for automatic modification of amplitude and offset when importing waveform data on AWG([1-4]) should be (1|2|3|4)")]
+	//public void TheImportParameterLevelUpdateChannelShouldBe_High(string awg_number, string expected_value)
+	//{
+	//    MassMemStepsLow.TheImportParameterLevelUpdateChannelValueShouldBe(awg_number, expected_value);
+	//}
+
+	/// <summary>
+	/// This command sets or queries the LEVel parameter which determines whether amplitude and offsets are modified during waveform import. 
+	/// If this value is set, the instrument amplitude and offset are automatically updated during waveform import.
+	/// 
+	/// MMEMory:IMPort:PARameter:LEVel[:UPDate][:STATe](?)
+	/// </summary>
+	/// <param name="awg_number">Which %AWG machine number</param>
+	/// <param name="value">Import state 1|0|ON|OFF</param>
+	// 
+	/*!
+		\massmemory\verbatim
+			[When(@"I set the state for automatic modification of amplitude and offset when importing waveform data on AWG([1-4]) to (1|0|ON|OFF)")]
+		\endverbatim 
+	  */
+	//[When(@"I set the state for automatic modification of amplitude and offset when importing waveform data on AWG([1-4]) to (1|0|ON|OFF)")]
+	//public void ISetTheImportParameterLevelUpdateState_High(string awg_number, string value)
+	//{
+	//    string interpreted_value;
+	//    switch (value)
+	//    {
+	//        case "ON":
+	//            interpreted_value = "1";
+	//            break;
+
+	//        case "OFF":
+	//            interpreted_value = "0";
+	//            break;
+
+	//        default:
+	//            interpreted_value = value;
+	//            break;
+	//    }
+	//    MassMemStepsLow.ISetTheImportParameterLevelUpdateStateValue(awg_number, value);
+	//}
+
+	/// <summary>
+	/// Compares the LEVel parameter which determines whether amplitude and offsets are modified during waveform import against 
+	/// the expected value. 
+	/// 
+	/// MMEMory:IMPort:PARameter:LEVel[:UPDate][:STATe](?)
+	/// </summary>
+	/// <param name="awg_number">Which %AWG machine number</param>
+	/// <param name="expected_value">Expected state 1|0|ON|OFF</param>
+	/*!
+		\massmemory\verbatim
+			[Then(@"the state returned for automatic modification of amplitude and offset when importing waveform data on AWG([1-4]) should be (1|0|ON|OFF)")]
+		\endverbatim 
+	  */
+	//[Then(@"the state returned for automatic modification of amplitude and offset when importing waveform data on AWG([1-4]) should be (1|0|ON|OFF)")]
+	//public void TheImportParameterLevelUpdateStateShouldBe_High(string awg_number, string expected_value)
+	//{
+	//    string interpreted_value;
+	//    switch (expected_value)
+	//    {
+	//        case "ON":
+	//            interpreted_value = "1";
+	//            break;
+
+	//        case "OFF":
+	//            interpreted_value = "0";
+	//            break;
+
+	//        default:
+	//            interpreted_value = expected_value;
+	//            break;
+	//    }
+	//    MassMemStepsLow.TheImportParameterLevelUpdateStateValueShouldBe(awg_number, expected_value);
+	//}
+
+	/// <summary>
+	/// Sets which data’s amplitude and offset values are selected for update during RSA file import
+	/// 
+	/// NOTE: This command is effective only when MMEMory:IMPort:PARameter:LEVel[:UPDate][:STATe] 
+	/// is set to True and IQT or TIQ is selected as the "Type" for the MMEMory:IMPort command.@n
+	/// MMEMory:IMPort:PARameter:LEVel[:UPDate]:TYPE
+	/// </summary>
+	/// <param name="awg_number">Which %AWG machine number</param>
+	/// <param name="value">Type of RSA data to be imported IDAT|QDAT|IDATa|QDATa|IDATA|QDATA</param>
+	//  - This commands .
+	//     
+	/*!
+		\massmemory\verbatim
+			[When(@"I set the type of RSA data to be imported to AWG([1-4]) as (IDAT|QDAT|IDATa|QDATa|IDATA|QDATA)")]
+		\endverbatim 
+		  //*/
+	//[When(@"I set the type of RSA data to be imported to AWG([1-4]) as (IDAT|QDAT|IDATa|QDATa|IDATA|QDATA)")]
+	//public void ISetTheTypeOfRSADataToBeImported_High(string awg_number, string value)
+	//{
+	//    MassMemStepsLow.ISetTheValueForTheTypeOfRSADataToBeImported(awg_number, value);
+	//}
+
+	/*!
+		\massmemory\verbatim
+			[Then(@"the type of RSA data selected for import on AWG([1-4]) should be (IDAT|QDAT)")]
+		\endverbatim 
+	  */
+	/// <summary>
+	/// Compares which data’s amplitude and offset values are selected for update during RSA file import
+	/// against the expected value.
+	/// 
+	/// MMEMory:IMPort:PARameter:LEVel[:UPDate]:TYPE
+	/// </summary>
+	/// <param name="awg_number">Which %AWG machine number</param>
+	/// <param name="expected_value">Expected Type of RSA data to be imported</param>
+	//[Then(@"the type of RSA data selected for import on AWG([1-4]) should be (IDAT|QDAT)")]
+	//public void TheTypeOfRSADataToBeImportedShouldBe_High(string awg_number, string expected_value)
+	//{
+	//    MassMemStepsLow.TheValueForTheTypeOfRSADataToBeImportedShouldBe(awg_number, expected_value);
+	//}
+
+	/// <summary>
+	/// Sets the resampling state for waveform import
+	/// 
+	/// MMEMory:IMPort:PARameter:RESampling[:STATe]
+	/// </summary>
+	/// <param name="awg_number">Which %AWG machine number</param>
+	/// <param name="value">Resampling state 1|0|ON|OFF</param>
+	// 
+	/*!
+		\massmemory\verbatim
+			[When(@"I set the resampling state when importing waveform data on AWG([1-4]) to (1|0|ON|OFF)")]
+		\endverbatim 
+	  */
+	//[When(@"I set the resampling state when importing waveform data on AWG([1-4]) to (1|0|ON|OFF)")]
+	//public void ISetTheImportParameterResamplingState_High(string awg_number, string value)
+	//{
+	//    string interpreted_value;
+	//    switch (value)
+	//    {
+	//        case "ON":
+	//            interpreted_value = "1";
+	//            break;
+
+	//        case "OFF":
+	//            interpreted_value = "0";
+	//            break;
+
+	//        default:
+	//            interpreted_value = value;
+	//            break;
+	//    }
+	//    MassMemStepsLow.ISetTheImportParameterResamplingStateValue(awg_number, value);
+	//}
+
+	/*!
+		\massmemory\verbatim
+			[Then(@"the resampling state when importing waveform data on AWG([1-4]) should be (1|0|ON|OFF)")]
+		\endverbatim 
+	  */
+	/// <summary>
+	/// Compares the resampling state for waveform import against the expected value.
+	/// 
+	/// MMEMory:IMPort:PARameter:RESampling[:STATe]
+	/// </summary>
+	/// <param name="awg_number">Which %AWG machine number</param>
+	/// <param name="expected_value">Expected resampling state</param>
+	//[Then(@"the resampling state when importing waveform data on AWG([1-4]) should be (1|0|ON|OFF)")]
+	//public void TheImportParameterResamplingStateShouldBe_High(string awg_number, string expected_value)
+	//{
+	//    string interpreted_value;
+	//    switch (expected_value)
+	//    {
+	//        case "ON":
+	//            interpreted_value = "1";
+	//            break;
+
+	//        case "OFF":
+	//            interpreted_value = "0";
+	//            break;
+
+	//        default:
+	//            interpreted_value = expected_value;
+	//            break;
+	//    }
+	//    MassMemStepsLow.TheImportParameterResamplingStateValueShouldBe(awg_number, expected_value);
+	//} 

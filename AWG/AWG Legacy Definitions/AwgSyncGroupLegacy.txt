@@ -1,0 +1,74 @@
+
+//SYSTem:KLOCk(?)-This command locks or unlocks the keyboard and front panel of the arbitrary waveform generator.
+		/*!
+			\system\verbatim
+		//[When(@"I set the AWG([1-4]) system keyboard and front panel lock value to (0|1)")]
+			\endverbatim 
+		*/
+		//[When(@"I set the AWG([1-4]) system keyboard and front panel lock value to (0|1)")]
+		//public void ISetTheAWGSystemKlockValueTo(string awg_number, string set_value)
+		//{
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    string commandLine = "SYSTem:KLOCk " + set_value;
+		//    awg.AWGVisaSession.Write(commandLine);
+		//}
+
+		/*!
+			\system\verbatim
+		//[When(@"I get the AWG([1-4]) system keyboard and front panel lock value")]
+			\endverbatim 
+		*/
+		//[When(@"I get the AWG([1-4]) system keyboard and front panel lock value")]
+		//public void IGetTheAWGSystemKlockValue(string awg_number)
+		//{
+		//    string response;
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    string commandLine = "SYSTem:KLOCk?";
+		//    awg.AWGVisaSession.Query(commandLine, out response);
+		//    awg.klock_state = response;
+		//}
+
+		/*!
+			\system\verbatim
+		//[Then(@"the AWG([1-4]) system keyboard and front panel lock value should be (.+)")]
+			\endverbatim 
+		*/
+		//[Then(@"the AWG([1-4]) system keyboard and front panel lock value should be (.+)")]
+		//public void TheAWGSystemKlockValueShouldBe(string awg_number, string expected_value)
+		//{
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    Assert.AreEqual(expected_value, awg.klock_state);
+		//}
+
+High Steps ******************************
+
+/// <summary>
+	  /// Sets the system keyboard and front panel lock value.
+	  /// 
+	  /// SYSTem:KLOCk(?)
+	  /// </summary>
+	  /// <param name="awg_number">Which %AWG machine number</param>
+	  /// <param name="set_value">Lock Value</param>
+	  //[When(@"I set the AWG([1-4]) system keyboard and front panel lock value to (0|1|ON|OFF)")]
+	  //public void ISetTheAWGSystemKlockValueTo(string awg_number, string set_value)
+	  //{
+	  //    string interpreted_value;
+	  //    switch (set_value)
+	  //    {
+	  //        case "ON":
+	  //            interpreted_value = "1";
+	  //            break;
+
+	  //        case "OFF":
+	  //            interpreted_value = "0";
+	  //            break;
+
+	  //        default:
+	  //            interpreted_value = set_value;
+	  //            break;
+	  //    }
+	  //    SystemStepsLow.ISetTheAWGSystemKlockValueTo(awg_number, interpreted_value);
+	  //}

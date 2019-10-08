@@ -1,0 +1,88 @@
+	//Jhowells 6-13-12
+        /// <summary>
+        /// Compares implemented options on the default AWG against the expected options.
+        /// 
+        /// *OPT?(Query Only)
+        /// </summary>
+        /// <param name="expected_value"></param>
+        /*!
+            \status\verbatim
+        [Then(@"the value of options implemented on the AWG should be (.+)")]
+            \endverbatim 
+        */
+        [Then(@"the value of options implemented on the AWG should be (.+)")]
+        public void TheValueOfOptionsImplementedOnTheAWGShouldBe(string expected_value)
+        {
+            AWG awg = AWG.GetAWG(0);
+            Assert.AreEqual(expected_value, awg.options_implemented);
+        }
+
+        //Jhowells 6-13-12
+        /// <summary>
+        /// Compares implemented options on the default AWG against the expected option.
+        /// 
+        /// *OPT?(Query Only)
+        /// </summary>
+        /// <param name="expected_value">Expected option</param>
+        /*!
+            \status\verbatim
+        [Then(@"the options implemented on the AWG should include option (0|01|132|150|208|216|225)")]
+            \endverbatim 
+        */
+        [Then(@"the options implemented on the AWG should include option (0|01|132|150|208|216|225)")]
+        public void TheValueOfOptionsImplementedOnTheAWGShouldInclude(string expected_value)
+        {
+            AWG awg = AWG.GetAWG(0);
+            Assert.AreEqual(expected_value, awg.options_implemented);
+        }
+
+ /// <summary>
+        /// Tests for the given option 
+        /// 
+        /// </summary>
+        /// <param name="awg_number">Which %AWG machine number</param>
+        /// <param name="included_option">The Option Number</param>
+        /*!
+            \status\verbatim
+            [Given(@"AWG([1-4]) has option (\d\d)")]
+            \endverbatim 
+        */
+        //[Given(@"AWG([1-4]) has option (\d\d)")]
+        //public void HasOption(string awg_number, string included_option)
+        //{
+        //    int index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(index);
+
+        //    //! \todo Get the options string
+        //    StatusStepsLow.IGetTheValueOfTheOptionsImplementedOnTheAWG(awg_number);
+
+        //    //! \todo Check if included_option is part of returned options string, assert fail if FALSE
+        //    bool contains = awg.options_implemented.Contains(included_option);
+        //    if (!contains) { Assert.Inconclusive("The expected option was not found - test aborted"); } // We don't want to fail, we just don't run the test.
+        //}
+
+        //Jhowells 6-13-12
+        /// <summary>
+        /// Tests for the exclusion of the given option 
+        /// 
+        /// </summary>
+        /// <param name="awg_number">Which %AWG machine number</param>
+        /// <param name="excluded_option">The Option Number</param>
+        /*!
+            \status\verbatim
+            [Given(@"AWG([1-4]) does not have option (\d\d)")]
+            \endverbatim 
+        */
+        //[Given(@"AWG([1-4]) does not have option (\d\d)")]
+        //public void DoesNotHaveOption(string awg_number, string excluded_option)
+        //{
+        //    int index = AWG.AWGNumString2Index(awg_number);
+        //    AWG awg = AWG.GetAWG(index);
+
+        //    //! \todo Get the options string
+        //    StatusStepsLow.IGetTheValueOfTheOptionsImplementedOnTheAWG(awg_number);
+
+        //    //! \todo Check if included_option is part of returned options string, assert fail if TRUE
+        //    bool contains = awg.options_implemented.Contains(excluded_option);
+        //    if (contains) { Assert.Inconclusive("An unexpected option was found, test aborted"); } // We don't want to fail, we just don't run the test.
+        //}

@@ -1,0 +1,123 @@
+/// <summary>
+		/// Sets the TRigger Sequence Polarity value
+   
+		/// TRIGger[:?SEQuence]:??POLarity
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/// <param name="setValue">Trigger sequence polarity value</param>
+		/*!
+			\trigger\verbatim
+		[When(@"I set the AWG([1-4]) Trigger Sequence Polarity Value to ([-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)")]
+			\endverbatim 
+		*/
+		//[When(@"I set the AWG([1-4]) Trigger Sequence Polarity Value to ([-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)")]
+		//public void ISetTheTriggerSequencePolarityValue(string awg_number, string setValue)
+		//{
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    string commandLine = "TRIGGER:SEQUENCE:POLARITY " + setValue;
+		//    awg.AWGVisaSession.Write(commandLine);
+		//}
+
+		/// <summary>
+		/// Sets the TRigger Sequence Polarity value
+  
+		/// TRIGger[:?SEQuence]:??POLarity
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\trigger\verbatim
+		[When(@"I get the Trigger Sequence Polarity Value from AWG([1-4])")]
+			\endverbatim 
+		*/
+		//[When(@"I get the Trigger Sequence Polarity Value from AWG([1-4])")]
+		//public void IGetTheTriggerSequencePolarityValue(string awg_number)
+		//{
+		//    string response;
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    awg.AWGVisaSession.Query("TRIGGER:SEQUENCE:POLARITY?", out response);
+		//    awg.trigger_polarity = response;
+		//}
+
+		/// <summary>
+		/// Compares the TRigger Sequence Polarity value against the expected value.
+   
+		/// TRIGger[:?SEQuence]:??POLarity
+		/// </summary>
+		/// <param name="awg_number"></param>
+		/// <param name="expected_value"></param>
+		/*!
+			\trigger\verbatim
+		[Then(@"the AWG([1-4]) Trigger Sequence Polarity Value should be ([-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)")]
+			\endverbatim 
+		*/
+		//[Then(@"the AWG([1-4]) Trigger Sequence Polarity Value should be ([-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)")]
+		//public void TheAWGTriggerSequencePolarityValueShouldBe(string awg_number, string expected_value)
+		//{
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    Assert.AreEqual(expected_value, awg.trigger_polarity);
+		//}
+
+/// <summary>
+		/// Sets the TRigger Sequence Timer value
+   
+		/// TRIGger[:?SEQuence]:?TIMer
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/// <param name="setValue">Trigger sequence timer value</param>
+		/*!
+			\trigger\verbatim
+		[When(@"I set the AWG([1-4]) Trigger Sequence Timer Value to ([-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)")]
+			\endverbatim 
+		*/
+		//[When(@"I set the AWG([1-4]) Trigger Sequence Timer Value to ([-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)")]
+		//public void ISetTheTriggerSequenceTimerValue(string awg_number, string setValue)
+		//{
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    string commandLine = "TRIGGER:SEQUENCE:TIMER " + setValue;
+		//    awg.AWGVisaSession.Write(commandLine);
+		//}
+
+		/// <summary>
+		/// Gets the TRigger Sequence Timer value
+  
+		/// TRIGger[:?SEQuence]:?TIMer
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\trigger\verbatim
+		[When(@"I get the Trigger Sequence Timer Value from AWG([1-4])")]
+			\endverbatim 
+		*/
+		//[When(@"I get the Trigger Sequence Timer Value from AWG([1-4])")]
+		//public void IGetTheTriggerSequenceTimerValue(string awg_number)
+		//{
+		//    string response;
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    awg.AWGVisaSession.Query("TRIGGER:SEQUENCE:TIMER?", out response);
+		//    awg.trigger_source = response;
+		//}
+
+		/// <summary>
+		/// Sets the TRigger Sequence Timer value
+	 
+		/// TRIGger[:?SEQuence]:?TIMer
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/// <param name="expected_value">Expected trigger sequence timer value</param>
+		/*!
+			\trigger\verbatim
+		[Then(@"the AWG([1-4]) Trigger Sequence Timer Value should be ([-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)")]
+			\endverbatim 
+		*/
+		//[Then(@"the AWG([1-4]) Trigger Sequence Timer Value should be ([-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)")]
+		//public void TheAWGTriggerSequenceTimerValueShouldBe(string awg_number, string expected_value)
+		//{
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    Assert.AreEqual(expected_value, awg.trigger_source);
+		//}

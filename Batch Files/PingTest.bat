@@ -1,0 +1,5 @@
+ping -4 AWG70002AQ001
+ping -4 CSA8000BB010330
+ping -4 PC-BEAV-1081
+ping -4 W-E126419-W7
+pause

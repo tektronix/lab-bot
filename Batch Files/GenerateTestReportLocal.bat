@@ -1,0 +1,2 @@
+@REM Generate the HTML report
+"%SAPL_TEST_ROOT%\packages\SpecFlow.1.9.0\tools\SpecFlow" mstestexecutionreport "C:\cc_storage\jmanning_PC-BEAV-00E6_snapshot\SSPL-SQA\SQA\SAPL Test Framework\Pascal Test Framework.csproj" /testResult:"C:\cc_storage\jmanning_PC-BEAV-00E6_snapshot\SSPL-SQA\SQA\Pascal Test Framework\TestResults\PascalTestresults.trx" /out:"C:\cc_storage\jmanning_PC-BEAV-00E6_snapshot\SSPL-SQA\SQA\Pascal Test Framework\TestResults\SAPLTestresults.htm"

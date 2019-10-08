@@ -1,0 +1,191 @@
+/// <summary>
+		/// Creates a new waveform
+		/// 
+		/// WLISt:WAVeform:NEW (no query)
+		/// </summary>
+		/// <param name="waveform_name">New waveform name</param>
+		/// <param name="length">New waveform length</param>
+		/// <param name="type">New waveform type</param>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\waveform\verbatim
+		[When(@"I create a new waveform named ""(.+)"" with length ((?<!\S)[-+]?\d+(?!\S)) of type (REAL|INTeger) on AWG([1-4])")]
+			\endverbatim 
+		*/
+		//[When(@"I create a new waveform named ""(.+)"" with length ((?<!\S)[-+]?\d+(?!\S)) of type (REAL|INTeger) on AWG([1-4])")]
+		//public void ICreateANewWaveformNamedWithLength(string waveform_name, string length, string type, string awg_number)
+		//{
+		//    int awg_index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(awg_index);
+
+		//    string commandLine = "WLISt:WAVEFORM:NEW " + waveform_name + ", " + length + ", " + type;
+		//    awg.AWGVisaSession.Write(commandLine);
+		//}
+
+		/// <summary>
+		/// Gets predefined state of the waveform.
+		/// 
+		/// WLISt:WAVEform:PREDefined? (Query Only)
+		/// </summary>
+		/// <param name="waveform_name">Waveform Name</param>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\waveform\verbatim
+		[When(@"I get the predefined state of the waveform ""(.+)"" on AWG([1-4])")]
+			\endverbatim 
+		*/
+		//[When(@"I get the predefined state of the waveform ""(.+)"" on AWG([1-4])")]
+		//public void IGetThePredefinedStateOfTheWaveform(string waveform_name, string awg_number)
+		//{
+		//    int awg_index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(awg_index);
+		//    string response;
+		//    string commandLine = "WLISt:Waveform:PREDefined?" + " " + waveform_name;
+		//    awg.AWGVisaSession.Query(commandLine, out response);
+		//    awg.waveform_predefined_state = response;
+
+		//}
+
+		/// <summary>
+		/// Compares predefined state of the waveform against the expected value.
+		/// 
+		/// WLISt:WAVEform:PREDefined? (Query Only)
+		/// </summary>
+		/// <param name="expected_value">Expected predefined waveform state</param>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		//! \todo (jeh) will need a high level step for this eventually
+		/*!
+			\waveform\verbatim
+		[Then(@"the predefined state of the waveform should be (0|1) on AWG([1-4])")]
+			\endverbatim 
+		*/
+		//[Then(@"the predefined state of the waveform should be (0|1) on AWG([1-4])")]
+		//public void ThePredefinedStateOfTheWaveform(string expected_value, string awg_number)
+		//{
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    Assert.AreEqual(expected_value, awg.waveform_predefined_state);
+		//}
+
+/// <summary>
+		/// Sets the waveform data.
+		/// 
+		/// NOTE. Before transferring data to the instrument, a waveform must be created using the WLISt:WAVeform:NEW command.@n
+		/// If Size is omitted, the length of waveform is assumed to be the value of the Size parameter.@
+		/// Using StartIndex and Size, part of a waveform can be transferred at a time. Very large waveforms can be transferred in chunks.@n
+		/// WLISt:WAVeform:DATA?
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/// <param name="waveform_name">Waveform Name</param>
+		/// <param name="start_index">Start index of waveform to transfer</param>
+		/// <param name="size">Size of the waveform to transfer</param>
+		/// <param name="data_block">Block Data</param>
+		/*!
+			\waveform\verbatim
+		[When(@"I send to the AWG([1-4]) data to the waveform ""(.+)"" at index (\d+) of size (\d+) data block of (\w+)")]
+			\endverbatim 
+		*/
+		//[When(@"I send to the AWG([1-4]) data to the waveform ""(.+)"" at index (\d+) of size (\d+) data block of (\w+)")]
+		//public void IsendToTheAWGDataToThewaveform(string awg_number, string waveform_name, string start_index, string size, string data_block)
+		//{
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    string commandLine = "WLISt:WAVeform:DATA " + waveform_name + ", " + start_index + "," + size + ", " + "#" + data_block;
+		//    awg.AWGVisaSession.Write(commandLine);
+		//}
+
+		/// <summary>
+		/// Gets the waveform data.
+		/// 
+		/// WLISt:WAVeform:DATA?
+		/// </summary>
+		/// <param name="waveform_name">Waveform Name</param>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\waveform\verbatim
+		[When(@"I get the data of the waveform ""(.+)"" from the list of the AWG([1-4])")]
+			\endverbatim 
+		*/
+		//[When(@"I get the data of the waveform ""(.+)"" from the list of the AWG([1-4])")]
+		//public void IgetTheData(string waveform_name, string awg_number)
+		//{
+		//    int awg_index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(awg_index);
+		//    string response;
+		//    string commandLine = "WLISt:Waveform:DATA? " + waveform_name;
+		//    awg.AWGVisaSession.Query(commandLine, out response);
+		//    awg.waveform_header_string = response;
+		//}
+
+		/// <summary>
+		/// Compares the waveform data against the expected value..
+		/// 
+		/// Note that the IEEE 488.2 block header depends on the type of the data. If it is integer type,@n 
+		/// the total bytes will be twice the size of the waveform and if it is a real waveform, the total bytes will be five@n 
+		/// times the size of the waveform.@n
+		/// WLISt:WAVeform:DATA?
+		/// </summary>
+		/// <param name="expected_value">Waveform Header Data</param>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\waveform\verbatim
+		[Then(@"the header data of the waveform should be (#\d+) on AWG([1-4])")]
+			\endverbatim 
+		*/
+		//[Then(@"the header data of the waveform should be (#\d+) on AWG([1-4])")]
+		//public void TheheaderdataofTheWaveform(string expected_value, string awg_number)
+		//{
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    Assert.AreEqual(expected_value, awg.waveform_header_string);
+		//}
+
+		/// <summary>
+		/// Sets the waveform marker data.
+		/// 
+		/// NOTE. This command returns or sends only marker data for the waveform@n
+		/// Block data can be sent in batches using "Size" and "StartIndex" parameters.@n
+		/// WLISt:WAVeform:MARKer:DATA?
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/// <param name="waveform_name">Waveform Name</param>
+		/// <param name="start_index">Start Index</param>
+		/// <param name="size">Size of waveform</param>
+		/// <param name="data_block">Block Marker data</param>
+		/*!
+			\waveform\verbatim
+		[When(@"I send to the AWG([1-4]) marker data to the waveform ""(.+)"" at index (\d+) of size (\d+) data block of (\w+)")]
+			\endverbatim 
+		*/
+		//[When(@"I send to the AWG([1-4]) marker data to the waveform ""(.+)"" at index (\d+) of size (\d+) data block of (\w+)")]
+		//public void IsendTheMarkerDataToTheWaveform(string awg_number, string waveform_name, string start_index, string size, string data_block)
+		//{
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    string commandLine = "WLISt:WAVeform:MARKer:DATA " + waveform_name + ", " + start_index + "," + size + ", " + "#" + data_block;
+		//    awg.AWGVisaSession.Write(commandLine);
+		//}
+
+		/// <summary>
+		/// Compares the waveform marker data against the expected value.
+		/// 
+		/// WLISt:WAVeform:MARKer:DATA?
+		/// </summary>
+		/// <param name="waveform_name">Waveform Name</param>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\waveform\verbatim
+		[When(@"I get the marker data of the waveform ""(.+)"" from the list of the AWG([1-4])")]
+			\endverbatim 
+		*/
+		//[When(@"I get the marker data of the waveform ""(.+)"" from the list of the AWG([1-4])")]
+		//public void IgettheMarkerDataOfTheWaveform(string waveform_name, string awg_number)
+		//{
+
+		//    int awg_index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(awg_index);
+		//    string response;
+		//    string commandLine = "WLISt:WAVeform:MARKer:DATA? " + waveform_name;
+		//    awg.AWGVisaSession.Query(commandLine, out response);
+		//    awg.waveform_type = response;
+		//}

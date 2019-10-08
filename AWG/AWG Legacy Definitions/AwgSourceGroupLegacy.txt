@@ -1,0 +1,494 @@
+/// <summary>
+				/// Sets the reference oscillator TYPE
+				/// 
+				/// SOURce[1]:ROSCillator:TYPE?
+				/// </summary>
+				/// <param name="awg_number">Which %AWG machine number</param>
+				/// <param name="expected_value">Reference oscillator type</param>
+		        /*!
+			        \source\verbatim
+				        [When(@"I set(?: the)?? AWG([1-4]) reference oscillator type to (.+)")]
+			        \endverbatim 
+		        */
+                [When(@"I set(?: the)?? AWG([1-4]) reference oscillator type to (.+)")]
+                public void ISetTheAWGReferenceOscillatorType(string awg_number, string expected_value)
+                {
+                    int index = AWG.AWGNumString2Index(awg_number);
+                    AWG awg = AWG.GetAWG(index);
+                    string commandLine = "Source1:ROSCillator:TYPE  " + expected_value;
+                    awg.AWGVisaSession.Write(commandLine);
+                }
+
+				/// <summary>
+				/// Gets the reference oscillator TYPE
+				/// 
+				/// SOURce[1]:ROSCillator:TYPE?
+				/// </summary>
+				/// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\source\verbatim
+				[When(@"I get the AWG([1-4]) reference oscillator type")]
+			\endverbatim 
+		*/
+				//[When(@"I get the AWG([1-4]) reference oscillator type")]
+				//public void IGetTheAWGReferenceOscillatorType(string awg_number)
+				//{
+				//    string response;
+				//    int index = AWG.AWGNumString2Index(awg_number);
+				//    AWG awg = AWG.GetAWG(index);
+				//    awg.AWGVisaSession.Query("Source1:ROSCillator:TYPE?", out response);
+				//    awg.ref_oscillator_type = response;
+				//}
+
+				/// <summary>
+				/// Expected the reference oscillator type against the expected value.
+				/// 
+				/// SOURce[1]:ROSCillator:TYPE?
+				/// </summary>
+				/// <param name="awg_number">Which %AWG machine number</param>
+				/// <param name="expected_value">Expected peference oscillator type</param>
+		/*!
+			\source\verbatim
+				[Then(@"the AWG([1-4]) reference oscillator type value should be (.+)")]
+			\endverbatim 
+		*/
+				//[Then(@"the AWG([1-4]) reference oscillator type value should be (.+)")]
+				//public void TheAWGReferenceOscillatorTypeValueShouldBe(string awg_number, string expected_value)
+				//{
+				//    int index = AWG.AWGNumString2Index(awg_number);
+				//    AWG awg = AWG.GetAWG(index);
+				//    Assert.AreEqual(expected_value, awg.ref_oscillator_type);
+				//}
+/// <summary>
+				/// Sets the delay of the analog output
+				
+				/// [SOURce[n]]:?DELay[:?ADJust]
+				/// </summary>
+				/// <param name="awg_number">Which %AWG machine number</param>
+				/// <param name="channel">Which channel</param>
+				/// <param name="setValue">Analog output delay</param>
+				/// <param name="units">Delay units</param>
+		/*!
+			\source\verbatim
+				[When(@"I set the AWG([1-4]) source delay adjust for channel (1|2|3|4) to ([-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?.+) with (PS|NS|MS|seconds) unit")]
+			\endverbatim 
+		*/
+				//[When(@"I set the AWG([1-4]) source delay adjust for channel (1|2|3|4) to ([-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?.+) with (PS|NS|MS|seconds) unit")]
+				//public void ISetTheSourceDelayAdjust(string awg_number, string channel, string setValue, string units)
+				//{
+				//    int index = AWG.AWGNumString2Index(awg_number);
+				//    AWG awg = AWG.GetAWG(index);
+				//    string unit_string = "";
+				//    if (units == "seconds")
+				//        unit_string = "";
+				//    else unit_string = units;
+				//    string commandLine = "SOURCE" + channel + ":DELAY:ADJUST " + setValue + unit_string;
+				//    awg.AWGVisaSession.Write(commandLine);
+				//}
+
+				/// <summary>
+				/// Gets the delay of the analog output
+				
+				/// [SOURce[n]]:?DELay[:?ADJust]
+				/// </summary>
+				/// <param name="awg_number">Which %AWG machine number</param>
+				/// <param name="channel">Which channel</param>
+		/*!
+			\source\verbatim
+				[When(@"I get the AWG([1-4]) source delay adjust value for channel (1|2|3|4)")]
+			\endverbatim 
+		*/
+				//[When(@"I get the AWG([1-4]) source delay adjust value for channel (1|2|3|4)")]
+				//public void IGetTheSourceDelayAdjustValue(string awg_number, string channel)
+				//{
+				//    string response;
+				//    int index = AWG.AWGNumString2Index(awg_number);
+				//    AWG awg = AWG.GetAWG(index);
+				//    string commandLine = "SOURCE" + channel + ":DELAY:ADJUST?";
+				//    awg.AWGVisaSession.Query(commandLine, out response);
+
+				//    switch (channel)
+				//    {
+				//        case "1":
+				//            awg.source1_delay_adjust = response;
+				//            break;
+
+				//        case "2":
+				//            awg.source2_delay_adjust = response;
+				//            break;
+
+				//        case "3":
+				//            awg.source3_delay_adjust = response;
+				//            break;
+
+				//        case "4":
+				//            awg.source4_delay_adjust = response;
+				//            break;
+				//    }
+				//}
+
+				/// <summary>
+				/// Compares the delay of the analog output against the expected value.
+				
+				/// [SOURce[n]]:?DELay[:?ADJust]
+				/// </summary>
+				/// <param name="awg_number">Which %AWG machine number</param>
+				/// <param name="channel">Which channel</param>
+				/// <param name="expected_value">Expected analog output delay</param>
+		/*!
+			\source\verbatim
+				[Then(@"the AWG([1-4]) source delay adjust value for channel (1|2|3|4) should be ([-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?) seconds")]
+			\endverbatim 
+		*/
+				//[Then(@"the AWG([1-4]) source delay adjust value for channel (1|2|3|4) should be ([-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?) seconds")]
+				//public void TheAWGSourceDelayAdjustValueShouldBe(string awg_number, string channel, string expected_value)
+				//{
+				//    int index = AWG.AWGNumString2Index(awg_number);
+				//    AWG awg = AWG.GetAWG(index);
+
+				//    switch (channel)
+				//    {
+				//        case "1":
+				//            Assert.AreEqual(expected_value, awg.source1_delay_adjust);
+				//            break;
+
+				//        case "2":
+				//            Assert.AreEqual(expected_value, awg.source2_delay_adjust);
+				//            break;
+
+				//        case "3":
+				//            Assert.AreEqual(expected_value, awg.source3_delay_adjust);
+				//            break;
+
+				//        case "4":
+				//            Assert.AreEqual(expected_value, awg.source4_delay_adjust);
+				//            break;
+
+				//        default:
+				//            break;
+
+				//    }
+				//}
+
+				/// <summary>
+				/// Sets the delay in points of the analog output
+				/// 
+				/// [SOURce[n]]:?DELay:?POINts
+				/// </summary>
+				/// <param name="awg_number">Which %AWG machine number</param>
+				/// <param name="channel">Which channel</param>
+				/// <param name="setValue">Delay of the analog output</param>
+		/*!
+			\source\verbatim
+				[When(@"I set the AWG([1-4]) source delay points for channel (1|2|3|4) to ([-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)")]
+			\endverbatim 
+		*/
+				//[When(@"I set the AWG([1-4]) source delay points for channel (1|2|3|4) to ([-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)")]
+				//public void ISetTheSourceDelayPoints(string awg_number, string channel, string setValue)
+				//{
+				//    int index = AWG.AWGNumString2Index(awg_number);
+				//    AWG awg = AWG.GetAWG(index);
+				//    string commandLine = "SOURCE" + channel + ":DELAY:POINTS " + setValue;
+				//    awg.AWGVisaSession.Write(commandLine);
+				//}
+
+				/// <summary>
+				/// Randomly sets the delay in points of the analog output
+				/// 
+				/// [SOURce[n]]:?DELay:?POINts
+				/// </summary>
+				/// <param name="awg_number">Which %AWG machine number</param>
+				/// <param name="channel">Which channel</param>
+				/// <param name="low_range">Low value of the range of the delay of the analog output</param>
+				/// <param name="high_range">High value of the range of the delay of the analog output</param>
+			 //[ When(@"I set the AWG([1-4]) source delay for channel (1|2|3|4) to a random value between ([-+]?\b\d+\b) PS and ([-+]?\b\d+\b) PS")]
+			 // public void ISetTheSourceDelayPointsToARandomValue(string awg_number, string channel, string low_range, string high_range)
+			 //{
+			 //  //! todo Kavin: The command actually will take MAX, MIN, (n)ms, (n)ns, (n)ps strings in addition to the float/seconds values
+			 //      int index = AWG.AWGNumString2Index(awg_number);
+			 //      AWG awg = AWG.GetAWG(index);
+			 //      Int64 high_value = Convert.ToInt64(high_range);
+			 //      Int64 low_value = Convert.ToInt64(low_range);
+			 //     // string random_delay = Convert.ToString(Math.Round((Random *( high_value - low_value)) + low_value));                                 
+			 //}
+
+				/// <summary>
+				/// Gets the delay in points of the analog output
+				
+				/// [SOURce[n]]:?DELay:?POINts
+				/// <param name="awg_number">Which %AWG machine number</param>
+				/// <param name="channel">Which channel</param>
+		/*!
+			\source\verbatim
+				[When(@"I get the AWG([1-4]) source delay points for channel (\d?)")]
+			\endverbatim 
+		*/
+				//[When(@"I get the AWG([1-4]) source delay points for channel (\d?)")]
+				//public void IGetTheSourceDelayPointsValue(string awg_number, string channel)
+				//{
+				//    string response;
+				//    int index = AWG.AWGNumString2Index(awg_number);
+				//    AWG awg = AWG.GetAWG(index);
+				//    string commandLine = "SOURCE" + channel + ":DELAY:POINTS?";
+				//    awg.AWGVisaSession.Query(commandLine, out response);
+
+				//    switch (channel)
+				//    {
+				//        case "1":
+				//            awg.source1_delay_points = response;
+				//            break;
+
+				//        case "2":
+				//            awg.source2_delay_points = response;
+				//            break;
+
+				//        case "3":
+				//            awg.source3_delay_points = response;
+				//            break;
+
+				//        case "4":
+				//            awg.source4_delay_points = response;
+				//            break;
+
+				//        default:
+				//            break;
+
+				//    }
+
+				//}
+
+				/// <summary>
+				/// Compares the delay in points of the analog output against the expected value.
+			 
+				/// [SOURce[n]]:?DELay:?POINts
+				/// <param name="awg_number">Which %AWG machine number</param>
+				/// <param name="channel">Which channel</param>
+				/// <param name="expected_value">Expected source delay points value</param>
+		/*!
+			\source\verbatim
+				[Then(@"the AWG([1-4]) source delay points value for channel (\d?) should be ([-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)")]
+			\endverbatim 
+		*/
+				//[Then(@"the AWG([1-4]) source delay points value for channel (\d?) should be ([-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)")]
+				//public void TheSourceDelayPointsValueShouldBe(string awg_number, string channel, string expected_value)
+				//{
+				//    int index = AWG.AWGNumString2Index(awg_number);
+				//    AWG awg = AWG.GetAWG(index);
+
+				//    switch (channel)
+				//    {
+				//        case "1":
+				//            Assert.AreEqual(expected_value, awg.source1_delay_points);
+				//            break;
+
+				//        case "2":
+				//            Assert.AreEqual(expected_value, awg.source2_delay_points);
+				//            break;
+
+				//        case "3":
+				//            Assert.AreEqual(expected_value, awg.source3_delay_points);
+				//            break;
+
+				//        case "4":
+				//            Assert.AreEqual(expected_value, awg.source4_delay_points);
+				//            break;
+
+				//        default:
+				//            break;
+
+				//    }
+
+				//}
+
+/// <summary>
+				/// Sets a file into the waveform memory
+			 
+				/// [SOURce[n]]:?FUNCtion:?USER
+				/// </summary>
+				/// <param name="wfm_name">Name of the Waveform</param>
+				/// <param name="filetype">Type of waveform file </param>
+				/// <param name="channel">Which channel</param>
+				/// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\source\verbatim
+				[When(@"I import the ""(.+)"" (sequence|waveform) file to channel (\d?) on AWG([1-4])")]
+			\endverbatim 
+		*/
+				//[When(@"I import the ""(.+)"" (sequence|waveform) file to channel (\d?) on AWG([1-4])")]
+				//public void ISetWaveform(string wfm_name, string filetype, string channel, string awg_number)
+				//{
+				//    int index = AWG.AWGNumString2Index(awg_number);
+				//    AWG awg = AWG.GetAWG(index);
+				//    string commandLine = "SOURCE" + channel + ":FUNCTION:USER " + '"' + wfm_name + '"';
+				//    awg.AWGVisaSession.Write(commandLine);
+				//}
+
+				/// <summary>
+				/// Gets a file into the waveform memory
+			
+				/// [SOURce[n]]:?FUNCtion:?USER
+				/// </summary>
+				/// <param name="channel">Which channel</param>
+				/// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\source\verbatim
+				[When(@"I get the name of the waveform file from channel (\d?) on AWG([1-4])")]
+			\endverbatim 
+		*/
+				//[When(@"I get the name of the waveform file from channel (\d?) on AWG([1-4])")]
+				//public void IGetWaveform(string channel, string awg_number)
+				//{
+				//    string response;
+				//    int index = AWG.AWGNumString2Index(awg_number);
+				//    AWG awg = AWG.GetAWG(index);
+				//    string commandLine = "SOURCE" + channel + ":FUNCTION:USER?";
+				//    awg.AWGVisaSession.Query(commandLine, out response);
+
+				//    switch (channel)
+				//    {
+				//        case "1":
+				//            awg.source1_waveform_filename = response;
+				//            break;
+
+				//        case "2":
+				//            awg.source2_waveform_filename = response;
+				//            break;
+
+				//        case "3":
+				//            awg.source3_waveform_filename = response;
+				//            break;
+
+				//        case "4":
+				//            awg.source4_waveform_filename = response;
+				//            break;
+				//    }
+				//}
+
+				/// <summary>
+				/// Tests that the file on a channel has the expected filename.
+			 
+				/// [SOURce[n]]:?FUNCtion:?USER
+				/// </summary>
+				/// <param name="awg_number">Which %AWG machine number</param>
+				/// <param name="expected_value">Expected waveform filename</param>
+		/*!
+			\source\verbatim
+				[Then(@"the waveform on channel (\d?) of AWG([1-4]) should be ""(.+)""")]
+			\endverbatim 
+		*/
+				//[Then(@"the waveform on channel (\d?) of AWG([1-4]) should be ""(.+)""")]
+				//public void TheWaveformMemoryWaveformValueShouldBe(string awg_number, string expected_value)
+				//{
+				//    int index = AWG.AWGNumString2Index(awg_number);
+				//    AWG awg = AWG.GetAWG(index);
+				//    Assert.AreEqual(expected_value, awg.source1_waveform_filename);
+				//}
+
+/// <summary>
+				/// Sets the parameter that is retained when sampling rate or waveform length is changed. 
+				/// 
+				/// [SOURce[n]]:?PDELay:?HOLD
+				/// </summary>
+				/// <param name="awg_number">Which %AWG machine number</param>
+				/// <param name="pdelayValue"> Source phase delay hold setting</param>
+				/// <param name="channel">Which channel</param>
+		/*!
+			\source\verbatim
+				[When(@"I set the AWG([1-4]) source phase delay hold setting to (.+) for channel (\d?)")]
+			\endverbatim 
+		*/
+				//[When(@"I set the AWG([1-4]) source phase delay hold setting to (.+) for channel (\d?)")]
+				//public void ISetTheSourcePhaseDelayHold(string awg_number, string pdelayValue, string channel)
+				//{
+				//    int index = AWG.AWGNumString2Index(awg_number);
+				//    AWG awg = AWG.GetAWG(index);
+				//    string commandLine = "SOURCE" + channel + ":PDELAY:HOLD " + pdelayValue;
+				//    awg.AWGVisaSession.Write(commandLine);
+				//}
+
+				/// <summary>
+				/// Gets the parameter that is retained when sampling rate or waveform length is changed. 
+				/// 
+				/// [SOURce[n]]:?PDELay:?HOLD
+				/// </summary>
+				/// <param name="awg_number">Which %AWG machine number</param>
+				/// <param name="channel">Which channel</param>
+		/*!
+			\source\verbatim
+				[When(@"I get the AWG([1-4]) source phase delay hold setting for channel (\d?)")]
+			\endverbatim 
+		*/
+				//[When(@"I get the AWG([1-4]) source phase delay hold setting for channel (\d?)")]
+				//public void IGetTheSourcePhaseDelayHoldValue(string awg_number, string channel)
+				//{
+				//    string response;
+				//    int index = AWG.AWGNumString2Index(awg_number);
+				//    AWG awg = AWG.GetAWG(index);
+				//    string commandLine = "SOURCE" + channel + ":PDELAY:HOLD?";
+				//    awg.AWGVisaSession.Query(commandLine, out response);
+
+				//    switch (channel)
+				//    {
+				//        case "1":
+				//            awg.source1_pdelay_hold = response;
+				//            break;
+
+				//        case "2":
+				//            awg.source2_pdelay_hold = response;
+				//            break;
+
+				//        case "3":
+				//            awg.source3_pdelay_hold = response;
+				//            break;
+
+				//        case "4":
+				//            awg.source4_pdelay_hold = response;
+				//            break;
+
+				//        default:
+				//            break;
+
+				//    }
+				//}
+
+				/// <summary>
+				/// Compares the parameter that is retained when sampling rate or waveform length is changed against the expected value. 
+			 
+				/// [SOURce[n]]:?PDELay:?HOLD
+				/// </summary>
+				/// <param name="awg_number">Which %AWG machine number</param>
+				/// <param name="expected_value">Expected source phase delay hold setting</param>
+				/// <param name="channel">Which channel</param>
+		/*!
+			\source\verbatim
+				[Then(@"the AWG([1-4]) source phase delay hold setting value should be (.+) for channel (\d?)")]
+			\endverbatim 
+		*/
+				//[Then(@"the AWG([1-4]) source phase delay hold setting value should be (.+) for channel (\d?)")]
+				//public void TheSourcePhaseDelayHoldValueShouldBe(string awg_number, string expected_value, string channel)
+				//{
+				//    int index = AWG.AWGNumString2Index(awg_number);
+				//    AWG awg = AWG.GetAWG(index);
+
+				//    switch (channel)
+				//    {
+				//        case "1":
+				//            Assert.AreEqual(expected_value, awg.source1_pdelay_hold);
+				//            break;
+
+				//        case "2":
+				//            Assert.AreEqual(expected_value, awg.source2_pdelay_hold);
+				//            break;
+
+				//        case "3":
+				//            Assert.AreEqual(expected_value, awg.source3_pdelay_hold);
+				//            break;
+
+				//        case "4":
+				//            Assert.AreEqual(expected_value, awg.source4_pdelay_hold);
+				//            break;
+
+				//        default:
+				//            break;
+				//    }
+				//}

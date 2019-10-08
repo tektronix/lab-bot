@@ -1,0 +1,820 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{58EA1183-A4CF-4C0F-B049-6C18725A1032}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AwgTestFramework</RootNamespace>
+    <AssemblyName>SAPLTests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SPECFLOW</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SPECFLOW</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>true</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SPECFLOW</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AWG\AWG PI Commands\CPI_Calibration.cs" />
+    <Compile Include="AWG\AWG PI Commands\CPI_CapturePlayback.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AWG\AWG PI Commands\CPI_Clock.cs" />
+    <Compile Include="AWG\AWG PI Commands\CPI_Diagnostics.cs" />
+    <Compile Include="AWG\AWG PI Commands\CPI_Display.cs" />
+    <Compile Include="AWG\AWG PI Commands\CPI_FGen.cs" />
+    <Compile Include="AWG\AWG PI Commands\CPI_GPIBUSB.cs" />
+    <Compile Include="AWG\AWG PI Commands\CPI_Instrument.cs" />
+    <Compile Include="AWG\AWG PI Commands\CPI_MassMemory.cs" />
+    <Compile Include="AWG\AWG PI Commands\CPI_MultiTone.cs" />
+    <Compile Include="AWG\AWG PI Commands\CPI_Output.cs" />
+    <Compile Include="AWG\AWG PI Commands\CPI_Sequence.cs" />
+    <Compile Include="AWG\AWG PI Commands\CPI_Source.cs" />
+    <Compile Include="AWG\AWG PI Commands\CPI_SXConnectivity.cs" />
+    <Compile Include="AWG\AWG PI Commands\CPI_SyncHub.cs" />
+    <Compile Include="AWG\AWG PI Commands\CPI_Trigger.cs" />
+    <Compile Include="AWG\AWG PI Commands\CPI_Waveform.cs" />
+    <Compile Include="AWG\AWG PI Function Definitions\AwgCapturePlaybackGroup.cs" />
+    <Compile Include="AWG\AWG PI Function Definitions\AwgDisplayGroup.cs" />
+    <Compile Include="AWG\AWG PI Function Definitions\AwgMultiToneGroup.cs" />
+    <Compile Include="AWG\AWG PI Function Definitions\AWGSXConnectivityGroup.cs" />
+    <Compile Include="AWG\AWG PI Function Definitions\AwgSyncHubGroup.cs" />
+    <Compile Include="AWG\AWG PI Step Definitions\AwgCapturePlaybackGroup_steps.cs" />
+    <Compile Include="AWG\AWG PI Step Definitions\AwgClockGroup_steps.cs" />
+    <Compile Include="AWG\AWG PI Function Definitions\AwgGPIBUSBGroup.cs" />
+    <Compile Include="AWG\AWG PI Function Definitions\AwgCalibrationGroup.cs" />
+    <Compile Include="AWG\AWG PI Function Definitions\AwgControlGroup.cs" />
+    <Compile Include="AWG\AWG PI Function Definitions\AwgDiagnosticsGroup.cs" />
+    <Compile Include="AWG\AWG PI Function Definitions\AwgEventGroup.cs" />
+    <Compile Include="AWG\AWG PI Function Definitions\AwgFGenGroup.cs" />
+    <Compile Include="AWG\AWG PI Function Definitions\AwgInstrumentGroup.cs" />
+    <Compile Include="AWG\AWG PI Function Definitions\AwgMassMemoryGroup.cs" />
+    <Compile Include="AWG\AWG PI Function Definitions\AwgOutputGroup.cs" />
+    <Compile Include="AWG\AWG PI Function Definitions\AwgSequenceGroup.cs" />
+    <Compile Include="AWG\AWG PI Function Definitions\AwgSourceGroup.cs" />
+    <Compile Include="AWG\AWG PI Function Definitions\AwgStatusGroup.cs" />
+    <Compile Include="AWG\AWG PI Function Definitions\AwgSyncGroup.cs" />
+    <Compile Include="AWG\AWG PI Function Definitions\AwgSystemGroup.cs" />
+    <Compile Include="AWG\AWG PI Function Definitions\AwgTriggerGroup.cs" />
+    <Compile Include="AWG\AWG PI Function Definitions\AwgWaveformGroup.cs" />
+    <Compile Include="AWG\AWG PI Step Definitions\AwgCalibrationGroup_steps.cs" />
+    <Compile Include="AWG\AWG PI Function Definitions\AwgClockGroup.cs" />
+    <Compile Include="AWG\AWG PI Step Definitions\AwgControlGroup_steps.cs" />
+    <Compile Include="AWG\AWG PI Step Definitions\AwgDiagnosticsGroup_steps.cs" />
+    <Compile Include="AWG\AWG PI Step Definitions\AwgDisplayGroup_Steps.cs" />
+    <Compile Include="AWG\AWG PI Step Definitions\AwgFGenGroup_steps.cs" />
+    <Compile Include="AWG\AWG PI Step Definitions\AwgInstrumentGroup_steps.cs" />
+    <Compile Include="AWG\AWG PI Step Definitions\AwgMassMemoryGroup_steps.cs" />
+    <Compile Include="AWG\AWG PI Step Definitions\AwgMultiToneGroup_steps.cs" />
+    <Compile Include="AWG\AWG PI Step Definitions\AwgOutputGroup_steps.cs" />
+    <Compile Include="AWG\AWG PI Step Definitions\AwgSequenceGroup_steps.cs" />
+    <Compile Include="AWG\AWG PI Step Definitions\AwgSourceGroup_steps.cs" />
+    <Compile Include="AWG\AWG PI Step Definitions\AwgStatusGroup_steps.cs" />
+    <Compile Include="AWG\AWG PI Step Definitions\AWGSXConnectivityGroup_steps.cs" />
+    <Compile Include="AWG\AWG PI Step Definitions\AwgSyncGroup_steps.cs" />
+    <Compile Include="AWG\AWG PI Step Definitions\AwgSyncHubGroup_steps.cs" />
+    <Compile Include="AWG\AWG PI Step Definitions\AwgSystemGroup_steps.cs" />
+    <Compile Include="AWG\AWG PI Step Definitions\AwgTriggerGroup_steps.cs" />
+    <Compile Include="AWG\AWG PI Step Definitions\AwgWaveformGroup_steps.cs" />
+    <Compile Include="AWG\AWG PI Step Definitions\AwgGPIBUSBGroup_steps.cs" />
+    <Compile Include="AWG\AWG UI Control Definitions\AwgButton_controls.cs" />
+    <Compile Include="AWG\AWG UI Control Definitions\AwgCheckbox_controls.cs" />
+    <Compile Include="AWG\AWG UI Function Definitions\Context_functions.cs" />
+    <Compile Include="AWG\AWG UI Control Definitions\AwgRadioButton_controls.cs" />
+    <Compile Include="AWG\AWG UI Function Definitions\FGenWindow_functions.cs" />
+    <Compile Include="AWG\AWG UI Control Definitions\AwgTab_controls.cs" />
+    <Compile Include="AWG\AWG UI Function Definitions\MainWindow_functions.cs" />
+    <Compile Include="AWG\AWG UI Step Definitions\FGenWindow_steps.cs" />
+    <Compile Include="AWG\AWG UI Function Definitions\FileAndUtilitiesWindow_functions.cs" />
+    <Compile Include="AWG\AWG UI Step Definitions\FileAndUtilitiesWindow_steps.cs" />
+    <Compile Include="AWG\AWG UI Step Definitions\MainWindow_steps.cs" />
+    <Compile Include="AWG\AWG UI Step Definitions\AwgWindowSteps.cs" />
+    <Compile Include="AWG\AWG UI Step Definitions\Files to rework\AwgCheckBox_steps.cs" />
+    <Compile Include="AWG\AWG UI Step Definitions\Files to rework\AwgComboBox_steps.cs" />
+    <Compile Include="AWG\AWG UI Step Definitions\Files to rework\AwgFunctionGenerator_steps.cs" />
+    <Compile Include="AWG\AWG UI Step Definitions\Files to rework\AwgEditBox_steps.cs" />
+    <Compile Include="AWG\AWG UI Step Definitions\Files to rework\AwgRadioButton_steps.cs" />
+    <Compile Include="AWG\AWG UI Step Definitions\Files to rework\AwgStatusBar_steps.cs" />
+    <Compile Include="AWG\AWG UI Step Definitions\Files to rework\AwgTabControl_steps.cs" />
+    <Compile Include="AWG\AWG UI Step Definitions\Files to rework\Awg_steps .cs" />
+    <Compile Include="AWG\AWG UI Step Definitions\Files to rework\Old_Step_Code.cs" />
+    <Compile Include="AWG\AWGUI.cs" />
+    <Compile Include="AWG\AWG\AWG.cs" />
+    <Compile Include="AWG\AWG\AWG_CalibrationSection.cs" />
+    <Compile Include="AWG\AWG\AWG_CapturePlaybackSection.cs" />
+    <Compile Include="AWG\AWG\AWG_ClockSection.cs" />
+    <Compile Include="AWG\AWG\AWG_ControlSection.cs" />
+    <Compile Include="AWG\AWG\AWG_DiagnosticsSection.cs" />
+    <Compile Include="AWG\AWG\AWG_DisplaySection.cs" />
+    <Compile Include="AWG\AWG\AWG_FGenSection.cs" />
+    <Compile Include="AWG\AWG\AWG_GPIBUSBSSection.cs" />
+    <Compile Include="AWG\AWG\AWG_InstrumentSection.cs" />
+    <Compile Include="AWG\AWG\AWG_MassMemorySection.cs" />
+    <Compile Include="AWG\AWG\AWG_MultiToneSection.cs" />
+    <Compile Include="AWG\AWG\AWG_OutputSection.cs" />
+    <Compile Include="AWG\AWG\AWG_SequenceSection.cs" />
+    <Compile Include="AWG\AWG\AWG_SourceSection.cs" />
+    <Compile Include="AWG\AWG\AWG_StatusSection.cs" />
+    <Compile Include="AWG\AWG\AWG_SXConnectivitySection.cs" />
+    <Compile Include="AWG\AWG\AWG_SyncHubSection.cs" />
+    <Compile Include="AWG\AWG\AWG_SyncSection.cs" />
+    <Compile Include="AWG\AWG\AWG_SystemSection.cs" />
+    <Compile Include="AWG\AWG\AWG_TriggerSection.cs" />
+    <Compile Include="AWG\AWG\AWG_WaveformSection.cs" />
+    <Compile Include="AWG\Common\NumLockCheck.cs" />
+    <Compile Include="AWG\AWGSetup_steps.cs" />
+    <Compile Include="AWG\AWG PI Commands\CPiCmds.cs" />
+    <Compile Include="AWG\AWG PI Commands\CPI_Control.cs" />
+    <Compile Include="AWG\AWG PI Commands\CPI_Status.cs" />
+    <Compile Include="AWG\AWG PI Commands\CPI_Sync.cs" />
+    <Compile Include="AWG\AWG PI Commands\CPI_System.cs" />
+    <Compile Include="AWG\Common\Utilities.cs" />
+    <Compile Include="AWG\Common\UtilitiesGroup.cs" />
+    <Compile Include="AWG\Common\Utilities_steps.cs" />
+    <Compile Include="AWG\DutInfo.cs" />
+    <Compile Include="AWG\DutUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AWG\DutUI.designer.cs">
+      <DependentUpon>DutUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AWG\AWG PI Commands\IPiCmds.cs" />
+    <Compile Include="AWG\IAWG.cs" />
+    <Compile Include="AWG\MainIndex.cs" />
+    <Compile Include="AWG\VISAExtensions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExtSource\ExtSource PI Commands\CPI_ExtSourceMemory.cs" />
+    <Compile Include="ExtSource\ExtSource PI Commands\CPI_ExtSourceWaveform.cs" />
+    <Compile Include="ExtSource\ExtSource PI Commands\CPI_ExtSourceSource.cs" />
+    <Compile Include="ExtSource\ExtSource PI Commands\CPI_ExtSourceControl.cs" />
+    <Compile Include="ExtSource\ExtSource PI Commands\CPiCmdsExtSource.cs" />
+    <Compile Include="ExtSource\ExtSource PI Commands\CPI_ExtSourceSystem.cs" />
+    <Compile Include="ExtSource\ExtSource PI Function Definitions\ExtSourceSourceGroup.cs" />
+    <Compile Include="ExtSource\ExtSource PI Function Definitions\ExtSourceWavefomGroup.cs" />
+    <Compile Include="ExtSource\ExtSource PI Function Definitions\ExtSourceMemoryGroup.cs" />
+    <Compile Include="ExtSource\ExtSource PI Function Definitions\ExtSourceSystemGroup.cs" />
+    <Compile Include="ExtSource\ExtSource PI Function Definitions\ExtSourceControlGroup.cs" />
+    <Compile Include="ExtSource\ExtSource PI Step Definitions\ExtSourceSystem_steps.cs" />
+    <Compile Include="ExtSource\ExtSource PI Step Definitions\ExtSourceWaveform_steps.cs" />
+    <Compile Include="ExtSource\ExtSource PI Step Definitions\ExtSourceSource_steps.cs" />
+    <Compile Include="ExtSource\ExtSource PI Step Definitions\ExtSourceMemory_steps.cs" />
+    <Compile Include="ExtSource\ExtSource PI Step Definitions\ExtSourceControl_steps.cs" />
+    <Compile Include="ExtSource\ExtSource\EXTSOURCE_SystemSection.cs" />
+    <Compile Include="ExtSource\ExtSource\EXTSOURCE_WaveformSection.cs" />
+    <Compile Include="ExtSource\ExtSource\EXTSOURCE_SourceSection.cs" />
+    <Compile Include="ExtSource\ExtSource\EXTSOURCE_Memory.cs" />
+    <Compile Include="ExtSource\ExtSource\EXTSOURCE.cs" />
+    <Compile Include="ExtSource\ExtSource PI Commands\IPiCmdsExtSource.cs" />
+    <Compile Include="ExtSource\ExtSource\EXTSOURCE_ControlSection.cs" />
+    <Compile Include="ExtSource\IEXTSOURCE.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scope\ISCOPE.cs" />
+    <Compile Include="Scope\Scope PI Commands\CPI_ScopeDisplay.cs" />
+    <Compile Include="Scope\Scope PI Commands\CPI_ScopeAcquire.cs" />
+    <Compile Include="Scope\Scope PI Commands\CPI_ScopeSystem.cs" />
+    <Compile Include="Scope\Scope PI Commands\CPI_ScopeTrigger.cs" />
+    <Compile Include="Scope\Scope PI Commands\CPI_ScopeMeasure.cs" />
+    <Compile Include="Scope\Scope PI Commands\CPiCmdsScope.cs" />
+    <Compile Include="Scope\Scope PI Commands\CPI_ScopeMask.cs" />
+    <Compile Include="Scope\Scope PI Commands\IPiCmdsScope.cs" />
+    <Compile Include="Scope\Scope PI Function Definitions\ScopeSystemGroup.cs" />
+    <Compile Include="Scope\Scope PI Function Definitions\ScopeTriggerGroup.cs" />
+    <Compile Include="Scope\Scope PI Function Definitions\ScopeMeasureGroup.cs" />
+    <Compile Include="Scope\Scope PI Function Definitions\ScopeDisplayGroup.cs" />
+    <Compile Include="Scope\Scope PI Function Definitions\ScopeAcquireGroup.cs" />
+    <Compile Include="Scope\Scope PI Function Definitions\ScopeMaskGroup.cs" />
+    <Compile Include="Scope\Scope PI Step Definitions\ScopeTrigger_steps.cs" />
+    <Compile Include="Scope\Scope PI Step Definitions\ScopeMeasure_steps.cs" />
+    <Compile Include="Scope\Scope PI Step Definitions\ScopeSystem_steps.cs" />
+    <Compile Include="Scope\Scope PI Step Definitions\ScopeDisplay_steps.cs" />
+    <Compile Include="Scope\Scope PI Step Definitions\ScopeAcquire_steps.cs" />
+    <Compile Include="Scope\Scope PI Step Definitions\ScopeMask_steps.cs" />
+    <Compile Include="Scope\Scope\SCOPE_DisplaySection.cs" />
+    <Compile Include="Scope\Scope\SCOPE_MaskSection.cs" />
+    <Compile Include="Scope\Scope\SCOPE_MeasureSection.cs" />
+    <Compile Include="Scope\Scope\SCOPE_SystemSection.cs" />
+    <Compile Include="Scope\Scope\SCOPE_TriggerSection.cs" />
+    <Compile Include="Scope\Scope\SCOPE_AcquireSection.cs" />
+    <Compile Include="Scope\Scope\SCOPE.cs" />
+    <Compile Include="Tests\SpecFlowFeature1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpecFlowFeature1.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0000.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0000.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0041.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0041.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0046.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0046.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0047.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0047.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0068.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0068.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0069.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0069.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0070.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0070.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0072.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0072.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0073.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0073.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0075.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0075.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0076.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0076.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0077.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0077.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0078.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0078.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0079.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0079.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0081.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0081.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0082.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0082.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0086.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0086.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0087.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0087.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0094.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0094.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0095.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0095.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0098.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0098.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0099.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0099.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0100.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0100.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0101.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0101.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0103.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0103.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0104.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0104.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0105.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0105.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0106.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0106.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0107.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0107.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0108.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0108.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0109.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0109.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0110.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0110.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0111.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0111.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0112.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0112.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0113.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0113.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0114.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0114.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0115.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0115.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0116.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0116.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0117.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0117.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0118.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0118.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0119.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0119.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0120.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0120.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0121.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0121.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0122.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0122.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0123.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0123.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0124.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0124.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0125.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0125.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0126.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0126.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0127.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0127.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0128.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0128.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0129.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0129.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0130.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0130.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0131.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0131.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_0132.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_0132.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\test_900000.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test_900000.feature</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Tests\SpecFlowFeature1.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SpecFlowFeature1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0000.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0000.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0041.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0041.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0046.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0046.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0047.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0047.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0068.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0068.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0069.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0069.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0070.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0070.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0072.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0072.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0073.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0073.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0075.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0075.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0076.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0076.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0077.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0077.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0078.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0078.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0079.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0079.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0081.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0081.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0082.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0082.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0086.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0086.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0087.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0087.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0094.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0094.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0095.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0095.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0098.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0098.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0099.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0099.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0100.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0100.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0101.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0101.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0103.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0103.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0104.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0104.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0105.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0105.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0106.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0106.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0107.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0107.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0108.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0108.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0109.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0109.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0110.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0110.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0111.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0111.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0112.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0112.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0113.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0113.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0114.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0114.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0115.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0115.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0116.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0116.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0117.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0117.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0118.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0118.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0119.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0119.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0120.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0120.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0121.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0121.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0122.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0122.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0123.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0123.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0124.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0124.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0125.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0125.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0126.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0126.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0127.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0127.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0128.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0128.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0129.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0129.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0130.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0130.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0131.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0131.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_0132.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_0132.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\test_900000.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test_900000.feature.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="TestResults\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AWG\DutUI.resx">
+      <DependentUpon>DutUI.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>bin\Debug\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="TechTalk.SpecFlow">
+      <HintPath>packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll</HintPath>
+    </Reference>
+    <Reference Include="TekVISANet, Version=1.1.1.0, Culture=neutral, PublicKeyToken=7f19bb2a5a9ae6e8, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\assembly\GAC_32\TekVISANet\1.1.1.0__7f19bb2a5a9ae6e8\TekVISANet.dll</HintPath>
+    </Reference>
+    <Reference Include="TestStack.White">
+      <HintPath>packages\TestStack.White.0.13.3\lib\net40\TestStack.White.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="UIAutomationTypes" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

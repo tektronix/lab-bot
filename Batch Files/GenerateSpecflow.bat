@@ -1,0 +1,1 @@
+"%SAPL_TEST_ROOT%\packages\SpecFlow.1.9.0\tools\SpecFlow" generateall "%SAPL_TEST_ROOT%\SAPL Test Framework.csproj"

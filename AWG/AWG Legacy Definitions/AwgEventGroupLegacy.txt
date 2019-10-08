@@ -1,0 +1,379 @@
+/// <summary>
+		/// Generates a forced event.
+		/// 
+		/// This is used to generate the event when the sequence is waiting for an event jump. This is equivalent 
+		/// to pressing the Force Event button on the front panel of the instrument.
+		/// EVENt[:IMMediate] (no query)
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\event\verbatim
+[When(@"I force an external event on(?: the)? AWG([1-4])?")]
+			\endverbatim 
+		*/
+		//[When(@"I force an external event on(?: the)? AWG([1-4])?")]
+		//public void IForceAnEvent(string awg_number)
+		//{
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    string commandLine = "EVENt:IMMediate";
+		//    awg.AWGVisaSession.Write(commandLine);
+		//}
+
+		/// <summary>
+		/// Sets the impedance of the external event input.
+
+		/// Valid values are 50 ohm or 1 kohm
+		/// EVENt:IMPedance(?)
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/// <param name="value">Impedance of the external event input. Valid values are 50 ohm or 1 kohm.</param>
+		/*!
+			\event\verbatim
+ [When(@"I set the external event input impedance on(?: the)? AWG([1-4])? to (MIN|MAX|[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)")]
+			\endverbatim 
+		*/
+		//[When(@"I set the external event input impedance on(?: the)? AWG([1-4])? to (MIN|MAX|[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)")]
+		//public void ISetTheExternalInputImpedance(string awg_number, string value)
+		//{
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    string commandLine = "EVENt:IMPedance " + value;
+		//    awg.AWGVisaSession.Write(commandLine);
+		//}
+
+		/// <summary>
+		/// Gets the impedance of the external event input.
+		
+		/// EVENt:IMPedance(?)
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\event\verbatim
+[When(@"I get the external event input impedance from(?: the)? AWG([1-4])?")]
+			\endverbatim 
+		*/
+		//[When(@"I get the external event input impedance from(?: the)? AWG([1-4])?")]
+		//public void IGetTheExternalInputImpedance(string awg_number)
+		//{
+		//    string response;
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    awg.AWGVisaSession.Query("EVENt:IMPedance?", out response);
+		//    awg.event_impedance = response;
+		//}
+
+		/// <summary>
+		/// Compares the impedance of the external event input against the expected value.
+		
+		/// EVENt:IMPedance(?)
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/// <param name="expected_value">Expected impedance of the external event input value</param>
+		/*!
+			\event\verbatim
+[Then(@"the external event input impedance value from(?: the)? AWG([1-4])? should be ([-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)")]
+			\endverbatim 
+		*/
+		//[Then(@"the external event input impedance value from(?: the)? AWG([1-4])? should be ([-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)")]
+		//public void TheExternalInputImpedanceShouldBe(string awg_number, string expected_value)
+		//{
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    Assert.AreEqual(expected_value, awg.event_impedance);
+		//}
+
+		/// <summary>
+		/// Set the Event Jump Timing
+		
+		/// EVENt:JTIMing(?)
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/// <param name="value"></param>
+		/*!
+			\event\verbatim
+[When(@"I set the event jump timing on(?: the)? AWG([1-4])? to (.+)")]
+			\endverbatim 
+		*/
+		//[When(@"I set the event jump timing on(?: the)? AWG([1-4])? to (.+)")]
+		//public void ISetTheEventJumpTiming(string awg_number, string value)
+		//{
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    string commandLine = "EVENt:JTIMing " + value;
+		//    awg.AWGVisaSession.Write(commandLine);
+		//}
+
+		/// <summary>
+		/// Get the Event Jump Timing
+		
+		/// EVENt:JTIMing(?)
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\event\verbatim
+[When(@"I get the event jump timing setting from(?: the)? AWG([1-4])?")]
+			\endverbatim 
+		*/
+		//[When(@"I get the event jump timing setting from(?: the)? AWG([1-4])?")]
+		//public void IGetTheEventJumpTiming(string awg_number)
+		//{
+		//    string response;
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    awg.AWGVisaSession.Query("EVENt:JTIMing?", out response);
+		//    awg.event_jump_timing = response;
+		//}
+
+		/// <summary>
+		/// Compare the Event Jump Timing value against the expected value
+		
+		/// EVENt:JTIMing(?)
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/// <param name="expected_value"></param>
+		/*!
+			\event\verbatim
+[Then(@"the event jump timing value on(?: the)? AWG([1-4])? should be (.+)")]
+			\endverbatim 
+		*/
+		//[Then(@"the event jump timing value on(?: the)? AWG([1-4])? should be (.+)")]
+		//public void TheEventJumpTimingValueShouldBe(string awg_number, string expected_value)
+		//{
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    Assert.AreEqual(expected_value, awg.event_jump_timing);
+		//}
+
+		/// <summary>
+		/// Gets the event level
+	   
+		/// EVENt:LEVel(?)
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/// <param name="value"></param>
+		/*!
+			\event\verbatim
+[When(@"I set the event level on(?: the)? AWG([1-4])? to ([-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)")]
+			\endverbatim 
+		*/
+		//[When(@"I set the event level on(?: the)? AWG([1-4])? to ([-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)")]
+		//public void ISetTheEventLevel(string awg_number, string value)
+		//{
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    string commandLine = "EVENt:LEVel " + value;
+		//    awg.AWGVisaSession.Write(commandLine);
+		//}
+
+		/// <summary>
+		/// Sets the event level
+	   
+		/// EVENt:LEVel(?)
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\event\verbatim
+[When(@"I get the event level setting from(?: the)? AWG([1-4])?")]
+			\endverbatim 
+		*/
+		//[When(@"I get the event level setting from(?: the)? AWG([1-4])?")]
+		//public void IGetTheEventLevel(string awg_number)
+		//{
+		//    string response;
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    awg.AWGVisaSession.Query("EVENt:LEVel?", out response);
+		//    awg.event_level = response;
+		//}
+
+		/// <summary>
+		/// Gets the event level
+		
+		/// EVENt:LEVel(?)
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/// <param name="expected_value"></param>
+		/*!
+			\event\verbatim
+[Then(@"the event level value on(?: the)? AWG([1-4])? should be ([-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)")]
+			\endverbatim 
+		*/
+		//[Then(@"the event level value on(?: the)? AWG([1-4])? should be ([-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)")]
+		//public void TheEventLevelValueShouldBe(string awg_number, string expected_value)
+		//{
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    Assert.AreEqual(expected_value, awg.event_level);
+		//}
+
+		/// <summary>
+		/// Sets the polarity of event signal
+		
+		/// EVENt:POLarity(?)
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/// <param name="value"></param>
+		/*!
+			\event\verbatim
+[When(@"I set the event polarity on(?: the)? AWG([1-4])? to (.+)")]
+			\endverbatim 
+		*/
+		//[When(@"I set the event polarity on(?: the)? AWG([1-4])? to (.+)")]
+		//public void ISetTheEventPolarity(string awg_number, string value)
+		//{
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    string commandLine = "EVENt:POLarity " + value;
+		//    awg.AWGVisaSession.Write(commandLine);
+		//}
+
+		/// <summary>
+		/// Gets the polarity of event signal
+	   
+		/// EVENt:POLarity(?)
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/*!
+			\event\verbatim
+[When(@"I get the event polarity setting from(?: the)? AWG([1-4])?")]
+			\endverbatim 
+		*/
+		//[When(@"I get the event polarity setting from(?: the)? AWG([1-4])?")]
+		//public void IGetTheEventPolarityValue(string awg_number)
+		//{
+		//    string response;
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    awg.AWGVisaSession.Query("EVENt:POLarity?", out response);
+		//    awg.event_polarity = response;
+		//}
+
+		/// <summary>
+		/// Compares the polarity of event signal against an expected value
+   
+		/// EVENt:POLarity(?)
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/// <param name="expected_value"></param>
+		/*!
+			\event\verbatim
+[Then(@"the event polarity value on(?: the)? AWG([1-4])? should be (.+)")]
+			\endverbatim 
+		*/
+		//[Then(@"the event polarity value on(?: the)? AWG([1-4])? should be (.+)")]
+		//public void TheEventPolarityValueShouldBe(string awg_number, string expected_value)
+		//{
+		//    int index = AWG.AWGNumString2Index(awg_number);
+		//    AWG awg = AWG.GetAWG(index);
+		//    Assert.AreEqual(expected_value, awg.event_polarity);
+		//}
+
+High Steps *******************************
+
+/// <summary>
+		/// Sets the AWG jump timing.  
+
+		/// Sets the AWG jump timing to synchronous or asynchronous 
+		/// EVENt:JTIMing(?)
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/// <param name="value">Event jump value of SYNC|ASYN|SYNChronous|ASYNchronous</param>
+		/*!
+			\event\verbatim
+			[When(@"I set the event jump timing on AWG([1-4]) to (SYNC|ASYN|SYNCHRONOUS|ASYNCHRONOUS)")]
+			\endverbatim 
+		*/
+		//[When(@"I set the event jump timing on AWG([1-4]) to (SYNC|ASYN|SYNCHRONOUS|ASYNCHRONOUS)")]
+		//public void ISetTheEventJumpTiming_High(string awg_number, string value)
+		//{
+		//    EventStepsLow.ISetTheEventJumpTiming(awg_number, value); //In this case, the value does nto need to be interpreted, all of these are legal
+		//}
+
+		/// <summary>
+		/// Tests the AWG jump timing mode.  
+
+		/// Tests the AWG jump timing mode is set to synchronous or asynchronous 
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/// <param name="expected_value">Event jump value should be set to SYNC|ASYN|SYNChronous|ASYNchronous</param>
+		/*!
+			\event\verbatim
+			[Then(@"the event jump timing value on AWG([1-4]) should be (SYNC|ASYN|SYNCHRONOUS|ASYNCHRONOUS)")]
+			\endverbatim 
+		*/
+		//[Then(@"the event jump timing value on AWG([1-4]) should be (SYNC|ASYN|SYNCHRONOUS|ASYNCHRONOUS)")]
+		//public void TheEventJumpTimingValueShouldBe_High(string awg_number, string expected_value)
+		//{
+		//    //Interpret the expected value into one that the instrument may return
+		//    string interpreted_value;
+		//    switch (expected_value)
+		//    {
+		//        case "SYNCHRONOUS":
+		//            interpreted_value = "SYNC";
+		//            break;
+
+		//        case "ASYNCHRONOUS":
+		//            interpreted_value = "ASYN";
+		//            break;
+		//        default:
+		//            interpreted_value = expected_value;
+		//            break;
+		//    }
+		//    // Pass these values to the low-order function
+		//    EventStepsLow.TheEventJumpTimingValueShouldBe(awg_number, interpreted_value);
+		//}
+
+		/// <summary>
+		/// Sets the AWG event signal polarity. 
+
+		/// Sets the AWG event signal polarity to positive or negative. 
+		/// EVENt:POLarity(?)
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/// <param name="value">Event signal polarity of POS|NEG|POSitive|NEGative</param>
+		/*!
+			\event\verbatim
+			[When(@"I set the event polarity on AWG([1-4]) to (POS|NEG|POSITIVE|NEGATIVE)")]
+			\endverbatim 
+		*/
+		//[When(@"I set the event polarity on AWG([1-4]) to (POS|NEG|POSITIVE|NEGATIVE)")]
+		//public void ISetTheEventPolarity_High(string awg_number, string value)
+		//{
+		//    EventStepsLow.ISetTheEventPolarity(awg_number, value);
+		//}
+
+		/// <summary>
+		/// Tests the AWG event signal polarity. 
+
+		/// Tests the AWG event signal polarity is the expect value of positive or negative. 
+		/// EVENt:POLarity(?)
+		/// </summary>
+		/// <param name="awg_number">Which %AWG machine number</param>
+		/// <param name="expected_value">Event signal polarity should be set to POS|NEG|POSitive|NEGative</param>
+		/*!
+			\event\verbatim
+			[Then(@"the event polarity value on AWG([1-4]) should be (POS|NEG|POSITIVE|NEGATIVE)")]
+			\endverbatim 
+		*/
+		//[Then(@"the event polarity value on AWG([1-4]) should be (POS|NEG|POSITIVE|NEGATIVE)")]
+		//public void TheEventPolarityValueShouldBe_High(string awg_number, string expected_value)
+		//{
+		//    //Interpret the expected value into one that the instrument may return
+		//    string interpreted_value;
+		//    switch (expected_value)
+		//    {
+		//        case "POSITIVE":
+		//            interpreted_value = "POS";
+		//            break;
+
+		//        case "NEGATIVE":
+		//            interpreted_value = "NEG";
+		//            break;
+		//        default:
+		//            interpreted_value = expected_value;
+		//            break;
+		//    }
+		//    // Pass these values to the low-order function
+		//    EventStepsLow.TheEventPolarityValueShouldBe(awg_number, expected_value);
+		//}
