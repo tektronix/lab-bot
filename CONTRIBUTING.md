@@ -1,7 +1,7 @@
 # Contributing
 When contributing to this repository, please first discuss the change you wish to make via a GitHub issue before making a change. This allows us to identify duplicate efforts and other issues before investing work into the implementation.
 
-Please note we have a [code of conduct](Code-of-Conduct.md), please follow it in all your interactions with the project.
+Please note we have a [code of conduct](CODE_OF_CONDUCT.md), please follow it in all your interactions with the project.
 
 ## Pull Request Process
 All code changes should be done on a branch or fork and merge requests should be attempting to merge to the master branch.
