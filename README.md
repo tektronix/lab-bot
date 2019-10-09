@@ -1,5 +1,5 @@
 # lab-bot :robot:
-[![Tektronix](https://tektronix.github.io/media/TEK-opensource_badge.svg)](https://github.com/tektronix)
+[![Tektronix](https://tektronix.github.io/media/TEK-opensource_badge.svg)](https://github.com/tektronix) [![CodeFactor](https://www.codefactor.io/repository/github/tektronix/lab-bot/badge)](https://www.codefactor.io/repository/github/tektronix/lab-bot)
 
 
 ## Description
