@@ -157,6 +157,6 @@ AWG Test Framework. In Ruby, modules are similar to C# base classes, but modules
 | UTILS    | Timers                             | Starts and stops timers, calculated elapsed time durations                                                                                                                                                                                                    | UTILS      | Timers                                 |
 
 The following is a class structure diagram of the test framework.  
-![Diagram1]()
-![Diagram2]()
+![Diagram1](./diagram1.png)
+![Diagram2](./diagram2.png)
 
