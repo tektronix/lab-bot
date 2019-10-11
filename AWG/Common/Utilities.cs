@@ -836,10 +836,7 @@ namespace AwgTestFramework
             XmlTextReader xmlTextReader = new XmlTextReader(new StringReader(XMLcode));
             try
             {
-                while (xmlTextReader.Read())
-                {
-                    ;
-                }
+                while (xmlTextReader.Read());
             }
             catch (XmlException ex) //Found something invalid, automatically fail the test
             {

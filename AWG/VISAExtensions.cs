@@ -32,7 +32,7 @@ namespace AwgTestFramework
             VI_EXCLUSIVE_LOCK = 1,
             VI_SHARED_LOCK = 2,
             VI_LOAD_CONFIG = 4
-        };
+        }
 
         public enum Attributes : uint
         {
@@ -142,7 +142,7 @@ namespace AwgTestFramework
             OPER_NAME = 0xBFFF4042,
             GPIB_RECV_CIC_STATE = 0x3FFF4193,
             RECV_TCPIP_ADDR = 0xBFFF4198
-        };
+        }
 
         public enum Status : int
         {
@@ -244,7 +244,7 @@ namespace AwgTestFramework
             ERROR_NSUP_MECH = -1073807196,
             ERROR_INTF_NUM_NCONFIG = -1073807195,
             ERROR_CONN_LOST = -1073807194,
-        };
+        }
 
         public enum EventTypes : int
         {
@@ -441,7 +441,7 @@ namespace AwgTestFramework
             VXI_CLASS_MESSAGE = 2,
             VXI_CLASS_REGISTER = 3,
             VXI_CLASS_OTHER = 4
-        };
+        }
 
         #endregion
     }
@@ -476,7 +476,7 @@ namespace AwgTestFramework
         public bool Write(Byte[] InputBuffer)
         {
             uint    returnCount = (uint)InputBuffer.Length;
-            return false == WorkingSession.OnErrorHandler((TekVISANet.TekVISADefs.Status)viWrite(_instrSession, InputBuffer, returnCount, out returnCount));
+            return WorkingSession.OnErrorHandler((TekVISANet.TekVISADefs.Status)viWrite(_instrSession, InputBuffer, returnCount, out returnCount)) == false;
         }
 
 		#endregion

@@ -67,7 +67,7 @@ namespace AwgTestFramework
             foreach (var c in charsToRemove)
             {
                 actualActiveAWG = actualActiveAWG.Replace(c, string.Empty);
-            };
+            }
 
             if (!expectedActiveAWG.Equals(actualActiveAWG))
             {
