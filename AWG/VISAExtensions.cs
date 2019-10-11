@@ -476,7 +476,7 @@ namespace AwgTestFramework
         public bool Write(Byte[] InputBuffer)
         {
             uint    returnCount = (uint)InputBuffer.Length;
-            return false == WorkingSession.OnErrorHandler((TekVISANet.TekVISADefs.Status)viWrite(_instrSession, InputBuffer, returnCount, out returnCount));
+            return WorkingSession.OnErrorHandler((TekVISANet.TekVISADefs.Status)viWrite(_instrSession, InputBuffer, returnCount, out returnCount)) == false;
         }
 
 		#endregion
