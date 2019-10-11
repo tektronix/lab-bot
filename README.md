@@ -7,7 +7,7 @@ lab-bot is a Test Framework that allows you to be able to control instrumentatio
 
 ## Build
 ### Dependencies
-- Visual Studio 2017
+- Visual Studio 2003
 - Castle.Core v3.3.0
 - TestStack.White v0.13.3
 - SpecFlow v 1.9.0
