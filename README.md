@@ -1,5 +1,5 @@
 # lab-bot :robot:
-[![Tektronix](https://tektronix.github.io/media/TEK-opensource_badge.svg)](https://github.com/tektronix) [![CodeFactor](https://www.codefactor.io/repository/github/tektronix/lab-bot/badge)](https://www.codefactor.io/repository/github/tektronix/lab-bot)
+[![Tektronix](https://tektronix.github.io/media/TEK-opensource_badge.svg)](https://github.com/tektronix) [![CodeFactor](https://www.codefactor.io/repository/github/tektronix/lab-bot/badge)](https://www.codefactor.io/repository/github/tektronix/lab-bot) [![Total alerts](https://img.shields.io/lgtm/alerts/g/tektronix/lab-bot.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/tektronix/lab-bot/alerts/)
 
 
 ## Description
