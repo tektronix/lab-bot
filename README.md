@@ -15,6 +15,7 @@ lab-bot is a Test Framework that allows you to be able to control instrumentatio
 ### Instructions
 
 ## Maintainer(s)
+- [Perry Hunter](github.com/phunter00)
 - [Zack Koppert](github.com/zkoppert)
 
 ## License
