@@ -15,7 +15,8 @@ lab-bot is a Test Framework that allows you to be able to control instrumentatio
 ### Instructions
 
 ## Maintainer(s)
-- [Zack Koppert](github.com/zkoppert)
+- [Perry Hunter](https://github.com/phunter00)
+- [Zack Koppert](https://github.com/zkoppert)
 
 ## License
 A license file is the legal document that gives anyone permission to use this project. We use the Apache v2 because we quite permissive. You can see the details here: [LICENSE](LICENSE)
